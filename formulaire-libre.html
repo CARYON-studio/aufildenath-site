@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parlez-moi de votre projet — Au fil de Nath</title>
+  <!-- Open Graph / partage réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Au fil de Nath" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Parlez-moi de votre projet — Au fil de Nath" />
+  <meta property="og:description" content="Décrivez votre projet sur-mesure : Nathalie vous répond personnellement pour créer une pièce unique, cousue main." />
+  <meta property="og:url" content="https://aufildenath.fr/formulaire-libre.html" />
+  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Parlez-moi de votre projet — Au fil de Nath" />
+  <meta name="twitter:description" content="Décrivez votre projet sur-mesure : Nathalie vous répond personnellement pour créer une pièce unique, cousue main." />
+  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+
+<body class="page-wrapper">
+
+  <header class="site-header site-header--inner" id="site-header">
+    <div class="site-header__nav-bar">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-sticky"><img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="220" height="80" /></a>
+        <nav class="site-header__nav">
+          <ul class="site-header__nav-list">
+            <li><a href="index.html" class="site-header__nav-link">Accueil</a></li>
+            <li><a href="boutique.html" class="site-header__nav-link">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html" class="site-header__nav-link is-active">Sur mesure</a></li>
+            <li><a href="index.html#realisations" class="site-header__nav-link">Projets réalisés</a></li>
+            <li><a href="index.html#contact" class="site-header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient site-header__cta-sticky">Parler de mon projet</a>
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="site-header__logo-block">
+      <div class="site-header__inner">
+        <a href="parler-de-mon-projet.html" class="back-link">← Retour</a>
+        <a href="index.html" class="site-header__logo-hero"><img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="380" height="138" /></a>
+      </div>
+    </div>
+    <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <hr class="site-header__mobile-menu__sep" aria-hidden="true" />
+      <div class="site-header__mobile-menu__inner">
+        <nav aria-label="Menu mobile">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html">Sur mesure</a></li>
+            <li><a href="index.html#realisations">Projets réalisés</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        <p class="site-header__mobile-menu__tagline">Chaque projet est étudié avec attention<br />Les délais et tarifs sont définis ensemble.</p>
+      </div>
+      <hr class="site-header__mobile-menu__sep site-header__mobile-menu__sep--bottom" aria-hidden="true" />
+    </div>
+  </header>
+
+
+  <main>
+    <section class="page">
+      <div class="page__inner">
+
+        <!-- En-tête avec photo flottante -->
+        <div style="overflow: hidden;">
+          <figure style="float: right; margin: 0 0 24px 40px; max-width: 260px;">
+            <img src="assets/formulaire%20sur%20mesure%20photo.png"
+                 alt="Nathalie au travail"
+                 class="form__surmesure-photo"
+                 style="width: 100%; border-radius: 18px; border: 0.5px solid var(--color-marine); box-shadow: var(--shadow-marine-soft);" />
+          </figure>
+
+          <h1 class="page__title">Parlez-moi de votre projet</h1>
+          <p class="page__intro">
+            Quelques mots suffisent pour me parler de votre projet.<br />
+            Seul le message et vos coordonnées sont nécessaires.
+          </p>
+        </div>
+
+        <!-- Formulaire libre -->
+        <form class="form" id="libre-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              style="margin-top: 40px; clear: both;">
+
+          <!-- Web3Forms — config -->
+          <input type="hidden" name="access_key" value="e36e63dd-40b0-411a-9d7c-08d9ce3f7f79" />
+          <input type="hidden" name="subject" value="Nouveau projet sur-mesure — Au fil de Nath" />
+          <input type="hidden" name="from_name" value="Au fil de Nath" />
+
+          <div class="form__group">
+            <label class="form__label" for="idee">Votre idée en quelques mots</label>
+            <textarea id="idee" name="idee" class="form__textarea"
+                      placeholder="Décrivez votre idée (prénoms, tissus, occasion, délais…)"
+                      style="min-height: 120px;"></textarea>
+            <p class="form__error" id="error-idee">Quelques mots sur votre projet m'aideraient à mieux vous répondre</p>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="usage">À quoi servira cette création&nbsp;?</label>
+            <textarea id="usage" name="usage" class="form__textarea"
+                      placeholder="Un fauteuil, un usage quotidien, une occasion spécifique…"
+                      style="min-height: 80px;"></textarea>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="contrainte">Y a-t-il une date ou une contrainte importante&nbsp;?</label>
+            <textarea id="contrainte" name="contrainte" class="form__textarea"
+                      placeholder="Une date souhaitée, un délai, ou aucune contrainte particulière…"
+                      style="min-height: 80px;"></textarea>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="prenom">Votre prénom</label>
+            <input type="text" id="prenom" name="prenom" class="form__input"
+                   placeholder="Comment puis-je vous appeler ?" />
+            <p class="form__error" id="error-prenom">J'ai juste besoin de votre prénom pour savoir comment vous appeler</p>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="email">Votre email</label>
+            <input type="email" id="email" name="email" class="form__input"
+                   placeholder="Votre email pour que je puisse vous répondre" />
+            <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
+          </div>
+
+          <div class="form__submit-wrap">
+            <button type="submit" class="btn btn--gradient form__submit">Lancer ma demande personnalisée</button>
+            <p class="form__footnote">
+              Vos informations restent confidentielles.<br />
+              Aucun message automatique, Nath vous répond personnellement.
+            </p>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+
+      <div id="contact" class="site-footer__social" aria-label="Retrouvez Au fil de Nath sur les réseaux">
+        <a href="https://www.instagram.com/au_fil_de_nath/" target="_blank" rel="noopener">
+          <img src="assets/logo%20insta.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Instagram</span>
+        </a>
+        <a href="https://www.vinted.fr/member/133558715-aufilsdenath?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnB0zWrY0VCp5iScxJnM4wXbTlK7Rzn_t2t8GuV2q97yDfnE0mERHfE2xr-8g_aem_fn0HZ6scnlGo0cQ_6BgeYw" target="_blank" rel="noopener">
+          <img src="assets/Check%20vinted.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Vinted</span>
+        </a>
+      </div>
+
+      <img class="site-footer__separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+      <div class="site-footer__bottom-row">
+        <a href="index.html" class="site-footer__logo" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20seul%20final.svg" alt="Au fil de Nath" />
+        </a>
+        <button type="button" class="site-footer__top-link" data-back-to-top aria-label="Retour en haut de la page">
+          Retour en haut
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="site-footer__bottom">
+        © <span data-footer-year>2026</span> Au fil de Nath — Tous droits réservés.
+        · <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+      </div>
+
+      <!-- 5) Mention créateur -->
+      <div class="site-footer__caryon">
+        <a href="https://caryonstudio.fr" target="_blank" rel="noopener" class="site-footer__caryon-link">
+          <img src="assets/caryon-logo.svg" alt="" aria-hidden="true" />
+          Créé par CARYON →
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="header.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('libre-form');
+
+      function setError(fieldId, errorId, show) {
+        const field = document.getElementById(fieldId);
+        const msg   = document.getElementById(errorId);
+        if (!field || !msg) return;
+        if (show) {
+          field.classList.add('is-invalid');
+          msg.classList.add('is-visible');
+          field.classList.add('is-invalid');
+          msg.classList.add('is-visible');
+        } else {
+          field.classList.remove('is-invalid');
+          msg.classList.remove('is-visible');
+        }
+      }
+
+      /* Effacer l'erreur dès que l'utilisateur commence à saisir */
+      ['idee', 'prenom', 'email'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('input', function () {
+          setError(id, 'error-' + id, false);
+        });
+      });
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var idee   = document.getElementById('idee').value.trim();
+        var prenom = document.getElementById('prenom').value.trim();
+        var email  = document.getElementById('email').value.trim();
+
+        setError('idee',   'error-idee',   !idee);
+        setError('prenom', 'error-prenom', !prenom);
+        setError('email',  'error-email',  !email);
+
+        if (!idee || !prenom || !email) {
+          var first = form.querySelector('.is-invalid');
+          if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        try {
+          const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+          const data = await res.json();
+          window.location.href = data.success ? 'merci.html' : 'echec.html';
+        } catch (err) {
+          window.location.href = 'echec.html';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

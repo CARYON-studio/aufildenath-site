@@ -1,0 +1,678 @@
+/* ============================================================
+   AU FIL DE NATH — Sections 4 à 7 (Accueil)
+   - 4 : Sur-mesure (3 étapes)
+   - 5 : Galerie projets réalisés
+   - 6 : Avis clients
+   - 7 : CTA final
+   Référence d'ensemble : Pages figma/Accueil.png
+   Détail Figma à venir → ajustements probables.
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION SUR-MESURE
+   3 étapes alignées : Échange / Création / Finalisation + CTA
+   ============================================================ */
+
+.surmesure {
+  padding: 56px 0 88px;
+  position: relative;
+  z-index: 2;
+}
+
+.surmesure__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+}
+
+.surmesure__eyebrow {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 16px;
+  letter-spacing: -0.2px;
+}
+
+.surmesure__intro {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+  margin: 0 0 48px;
+  max-width: 560px;
+}
+
+.surmesure__steps {
+  list-style: none;
+  margin: 16px auto 64px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;          /* resserré */
+  row-gap: 24px;
+  max-width: 880px;          /* contraint au centre comme valeurs */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centré */
+  text-align: center;         /* centré */
+}
+
+.step__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
+}
+
+.step__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 10px;
+  letter-spacing: -0.2px;
+}
+
+.step__text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+.surmesure__cta {
+  display: inline-flex;
+  margin: 0 auto;
+  padding: 14px 36px;
+}
+
+.surmesure__inner > .surmesure__cta {
+  display: flex;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .surmesure { padding: 48px 0 72px; }
+  .surmesure__steps { column-gap: 32px; }
+  .step__title { font-size: 19px; }
+}
+
+@media (max-width: 768px) {
+  .surmesure { padding: 32px 0 56px; }
+  .surmesure__steps {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+    margin-bottom: 36px;
+  }
+  .step { align-items: center; text-align: center; }
+  .step__text { max-width: 280px; }
+}
+
+
+/* ============================================================
+   SECTION GALERIE — "Créations qui ont déjà trouvé leur place"
+   Carrousel de cards projet : "Pour [prénom] / [produit]" + description + photo
+   Réutilise les classes .card du carrousel principal (creations.css).
+   ============================================================ */
+
+.gallery {
+  padding: 48px 0 72px;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  /* Padding-left fluid (même valeur que .creations__inner) */
+  padding: 0 var(--page-padding-x) 0 clamp(28px, calc(24vw - 62px), 280px);
+}
+
+/* Titre aligné sur la marge gauche de page, pas sur l'indent du carousel */
+.gallery__inner > .creations__eyebrow {
+  margin-left: calc(var(--page-padding-x) - clamp(28px, calc(24vw - 62px), 280px));
+}
+
+.gallery__eyebrow {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 36px;
+  letter-spacing: -0.2px;
+}
+
+/* Card projet — variante du .card avec titre 2 lignes + texte court + photo */
+.project-card__for {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  margin: 0 0 4px;
+  opacity: 0.85;
+  max-width: 276px;
+}
+
+.project-card__name {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: var(--weight-regular);
+  color: var(--color-marine);
+  margin: 0 0 12px;
+  line-height: 1.3;
+  max-width: 276px;
+}
+
+.project-card__desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  min-height: 3.2em;
+  max-width: 276px;
+}
+
+.project-card__photo {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 276px;
+  max-height: 276px;
+}
+
+.project-card__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .gallery { padding: 32px 0 56px; }
+}
+
+
+/* ============================================================
+   SECTION AVIS — "Elles en parlent"
+   Card : source produit (centré) → photo carrée → nom (gauche) → citation (gauche, italique)
+   Photo plus présente, texte plus discret.
+   ============================================================ */
+
+.testimonials {
+  padding: 56px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+}
+
+.testimonials__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  margin: 0 0 24px;
+  opacity: 0.85;
+  letter-spacing: 0.3px;
+}
+
+.testimonials__grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 64px;                /* gap horizontal desktop 64px (entre chaque carte) */
+  row-gap: 24px;
+  max-width: 1100px;
+  /* Cards en HUG CONTENT : alignées en haut, hauteur ajustée au contenu */
+  align-items: start;
+  justify-items: center;
+}
+
+.testimonial {
+  padding: 16px;                  /* 16 partout */
+  border: 0.5px solid var(--color-marine);
+  border-radius: 20px;
+  background-color: var(--color-ecru);
+  display: flex;
+  flex-direction: column;
+  align-items: center;            /* enfants centrés horizontalement */
+  /* Hug content : la card prend la largeur qu'il lui faut, max card width */
+  width: fit-content;
+  max-width: 100%;
+}
+
+.testimonial__source {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.55;
+  margin: 0 0 18px;
+  text-align: center;
+  opacity: 0.9;
+  /* max-width réduit pour que le texte ne soit pas trop large */
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial__author {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-marine);
+  margin: 0 0 8px;
+  text-align: left;
+  max-width: 220px;
+  align-self: flex-start;
+}
+
+.testimonial__quote {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.65;
+  margin: 0 0 18px;
+  font-style: italic;
+  text-align: left;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Guillemet ouvrant simple — pas de fermant */
+.testimonial__quote::before {
+  content: '\201C';
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--color-marine);
+  opacity: 0.5;
+  margin-right: 2px;
+  font-style: normal;
+}
+
+.testimonial__quote::after {
+  content: none;
+}
+
+/* Photo : centrée en bas, plus petite (160px max), carrée arrondie.
+   Pas de margin auto (hug content → pas besoin de pousser en bas) */
+.testimonial__photo {
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  width: clamp(200px, 100%, 276px);
+}
+
+.testimonial__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .testimonials__grid { column-gap: 16px; row-gap: 16px; }
+  .testimonial { padding: 16px; }
+}
+
+@media (max-width: 768px) {
+  .testimonials { padding: 32px 0 56px; }
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    row-gap: 16px;          /* remis à 16 (le gap horizontal desktop reste à 16 aussi) */
+  }
+}
+
+
+/* ============================================================
+   SECTION CTA FINAL — "Un projet, une idée, une envie ?"
+   Title + sous-titre 2 lignes + bouton + petit texte rassurant en dessous.
+   Aligné à gauche (cf. Figma) sur desktop, centré sur mobile.
+   ============================================================ */
+
+.final-cta {
+  padding: 72px 0 64px;
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+}
+
+.final-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 14px;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+}
+
+.final-cta__text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--color-marine);
+  line-height: 22px;
+  margin: 0 0 32px;
+  max-width: 540px;
+  opacity: 0.8;
+}
+
+.final-cta__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.final-cta__action .btn {
+  padding: 14px 36px;
+}
+
+/* Les deux CTAs (Voir les créations + Parler de mon projet) :
+   centrés horizontalement avec un gap généreux entre eux. */
+.final-cta__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.final-cta__buttons .btn {
+  padding: 14px 36px;
+}
+
+@media (max-width: 768px) {
+  .final-cta__buttons {
+    gap: 48px;
+    flex-direction: column;
+  }
+  /* Pas de width/max-width forcé : le bouton garde sa largeur naturelle
+     (basée sur le texte + padding), cohérent avec tous les autres CTAs du site. */
+}
+
+/* Texte sous le CTA (réassurance) */
+.final-cta__reassurance {
+  margin: 16px 0 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--color-marine);
+  line-height: 22px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .final-cta { padding: 48px 0 48px; }
+}
+
+
+/* ============================================================
+   FOOTER — minimal (cf. Figma)
+   1) Rangée d'icônes sociales centrées (Lien externe + Instagram + Vinted + Facebook)
+      avec libellé sous chaque icône.
+   2) Séparateur dashed pastel.
+   3) Rangée : logo bobine (gauche) + "Retour en haut ↑" (droite).
+   Padding-x réduit pour respirer mais sans débordement.
+   ============================================================ */
+
+.site-footer {
+  padding: 48px 0 44px;
+  position: relative;
+  z-index: 2;
+  margin-top: 8px;
+}
+
+.site-footer__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  /* Padding réduit par rapport au reste du site (était var(--page-padding-x)) */
+  padding: 0 24px;
+}
+
+/* ── 1) Social icons row ───────────────────────────────── */
+.site-footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 56px;
+  flex-wrap: wrap;
+  margin: 0 0 28px;
+}
+
+.site-footer__social a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-marine);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  opacity: 0.85;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.site-footer__social a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.site-footer__social img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.site-footer__social-label {
+  display: block;
+  line-height: 1;
+}
+
+/* ── 2) Séparateur footer — même rendu que .section-separator */
+.site-footer__separator {
+  display: block;
+  width: clamp(180px, 50vw, 640px);
+  max-width: calc(100% - 2 * var(--page-padding-x));
+  height: 4px;
+  margin: 0 auto 20px;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .site-footer__separator {
+    width: clamp(140px, 65vw, 320px);
+  }
+}
+
+/* ── 3) Bottom row : logo + retour en haut, tous deux centrés
+   Gap généreux pour mieux séparer visuellement les deux éléments. */
+.site-footer__bottom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;                     /* gap plus généreux (était 24px) */
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-footer__logo img {
+  display: block;
+  width: 36px;
+  height: auto;
+  opacity: 0.95;
+}
+
+.site-footer__top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+.site-footer__top-link:hover {
+  opacity: 1;
+}
+
+.site-footer__top-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.site-footer__bottom {
+  margin: 24px auto 0;
+  padding: 14px 0 0;
+  border-top: 0.5px solid rgba(47, 58, 68, 0.1);
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  opacity: 0.55;
+  text-align: center;
+}
+
+.site-footer__legal-link {
+  color: var(--color-marine);
+  opacity: 0.6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-rose);
+  font-family: var(--font-sans);
+  font-size: inherit;
+  font-weight: 300;
+  transition: opacity 0.2s;
+}
+
+.site-footer__legal-link:hover {
+  opacity: 1;
+}
+
+/* ── 5) Mention créateur CARYON ───────────────────────────── */
+.site-footer__caryon {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.site-footer__caryon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--color-marine);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: var(--weight-light);
+  letter-spacing: 0.3px;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.site-footer__caryon-link:hover {
+  opacity: 0.65;
+}
+
+.site-footer__caryon-link img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 44px 0 36px;
+  }
+  .site-footer__inner {
+    padding: 0 16px;
+  }
+  .site-footer__social {
+    gap: 32px;
+  }
+  .site-footer__social a {
+    font-size: 12px;
+  }
+}
+
+
+/* ============================================================
+   SÉPARATEUR ENTRE SECTIONS — Séparateur.svg horizontal
+   Trait pointillé dégradé pastel (E3DDF0 → F2D6DC → DDE7F0)
+   ============================================================ */
+
+.section-separator {
+  display: block;
+  /* Responsive fluide : largeur en % du viewport, capée à 640px */
+  width: clamp(180px, 50vw, 640px);
+  max-width: calc(100% - 2 * var(--page-padding-x));
+  height: 4px;
+  margin: 0 auto;
+  padding: 0;
+  opacity: 0.75;
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .section-separator {
+    width: clamp(140px, 65vw, 320px);
+  }
+}
+
+/* ── Ancres de navigation — compensation nav sticky pour scroll natif (cross-page)
+   Le smooth-scroll JS gère l'offset sur la même page ; scroll-margin-top couvre
+   la navigation depuis une autre page (boutique → index.html#realisations/contact). */
+#realisations,
+#contact {
+  scroll-margin-top: 72px;
+}

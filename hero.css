@@ -1,0 +1,265 @@
+/* ============================================================
+   AU FIL DE NATH — Section Hero (Accueil)
+   Référence design : Figma node 53:2 (desktop) / 679:707 (mobile)
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   STRUCTURE GÉNÉRALE
+   - Grid 2 colonnes en desktop : titre & signature plein largeur,
+     texte+CTA à gauche, image à droite.
+   - En mobile, tout passe en colonne unique centrée
+     avec l'image en premier.
+---------------------------------------------------------- */
+
+/* Pas de background-color : la section est transparente pour laisser
+   la broderie (sur .page-wrapper) apparaître entre le fond et le contenu. */
+.hero {
+  padding: 24px 0 96px;
+  position: relative;
+  z-index: 2;                  /* contenu au-dessus de la broderie (z-index 1) */
+}
+
+.hero__inner {
+  max-width: var(--content-width);     /* 1280px */
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);    /* 80px */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title     title"
+    "subtitle  image"
+    "cta       image"
+    "signature signature";
+  column-gap: 64px;
+  row-gap: 20px;
+  align-items: start;
+}
+
+
+/* ----------------------------------------------------------
+   TITRE PRINCIPAL
+   "Des pièces faites main, pour petits et grands"
+---------------------------------------------------------- */
+
+.hero__title {
+  grid-area: title;
+  margin: 0;
+
+  font-family: var(--font-serif);              /* Playfair Display */
+  font-size: clamp(36px, 5.4vw, 78px);
+  font-weight: var(--weight-medium);           /* 500 */
+  color: var(--color-marine);
+
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+
+
+/* ----------------------------------------------------------
+   SOUS-TITRE
+---------------------------------------------------------- */
+
+.hero__subtitle {
+  grid-area: subtitle;
+  margin: 8px 0 0;
+  max-width: 480px;
+
+  font-family: var(--font-sans);               /* Source Sans 3 */
+  font-size: var(--text-body-lg);              /* 17px */
+  font-weight: var(--weight-light);            /* 300 */
+  color: var(--color-marine);
+  line-height: 1.6;
+}
+
+
+/* ----------------------------------------------------------
+   IMAGE
+   - Coins arrondis 24px desktop, plus marqués sur mobile
+   - Occupe les 2 lignes "subtitle" + "cta" en desktop
+---------------------------------------------------------- */
+
+.hero__image {
+  grid-area: image;
+  grid-row: span 2;                            /* couvre subtitle + cta */
+  margin: 0;
+  align-self: center;
+  justify-self: end;                           /* on plaque l'image à droite */
+  max-width: 460px;                            /* on réduit la taille desktop */
+  width: 100%;
+}
+
+/* Photo Hero : stroke fin marine + ombre marine douce.
+   Spec Figma : border 0.5px #2F3A44 / shadow 0 4 12 marine 12%.
+   Au hover : léger boost brightness 1.05 (transition douce). */
+.hero__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 6 / 5;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 0.5px solid var(--color-marine);
+  box-shadow: var(--shadow-marine-soft);       /* 0 4px 12px marine 12% */
+  transition: filter 0.35s ease;
+}
+
+.hero__image img:hover {
+  filter: brightness(1.05);
+}
+
+
+/* ----------------------------------------------------------
+   CTA — bouton pill
+   Réutilise .btn / .btn--outline de header.css
+---------------------------------------------------------- */
+
+.hero__cta {
+  grid-area: cta;
+  justify-self: center;                        /* centré dans la colonne gauche */
+  margin-top: 12px;
+  padding: 14px 36px;
+  font-size: 16px;
+}
+
+
+/* ----------------------------------------------------------
+   SIGNATURE
+   Phrase de clôture, centrée pleine largeur
+---------------------------------------------------------- */
+
+.hero__signature {
+  grid-area: signature;
+  margin: 56px auto 0;
+  max-width: 720px;
+
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);              /* 17px */
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — Tablette (769px → 1024px)
+   Layout "desktop compressé" : 2 colonnes, mais le titre passe
+   dans la colonne gauche (wrap naturel) au lieu de spanner.
+   Texte centré dans la colonne gauche, image à droite.
+---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+  .hero {
+    padding: 16px 0 72px;
+  }
+
+  .hero__inner {
+    /* padding hérité de --page-padding-x = 40px (variables.css) */
+    column-gap: 32px;
+    row-gap: 14px;
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-areas:
+      "title     image"
+      "subtitle  image"
+      "cta       image"
+      "signature signature";
+  }
+
+  .hero__title {
+    font-size: clamp(28px, 4.8vw, 44px);
+    text-align: center;
+    letter-spacing: -0.3px;
+  }
+
+  .hero__subtitle {
+    text-align: center;
+    margin: 4px auto 0;
+    max-width: 100%;
+  }
+
+  .hero__image {
+    grid-row: span 3;                          /* couvre title + subtitle + cta */
+    max-width: 340px;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .hero__cta {
+    margin-top: 8px;
+  }
+
+  .hero__signature {
+    margin-top: 40px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — Mobile (≤ 768px)
+   Une seule colonne, image en haut, tout centré.
+---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 8px 0 56px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "title"
+      "subtitle"
+      "cta"
+      "signature";
+    column-gap: 0;
+    row-gap: 20px;
+    text-align: center;
+  }
+
+  .hero__image {
+    grid-row: auto;                            /* reset le span 2 */
+    justify-self: center;                      /* image centrée en mobile */
+    max-width: min(360px, 100%);               /* respire un peu sur écrans larges */
+    margin: 0 auto;
+  }
+
+  .hero__image img {
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+  }
+
+  .hero__title {
+    font-size: var(--text-h1);                 /* 32px (variable mobile) */
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    margin-top: 4px;
+  }
+
+  .hero__subtitle {
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Sur très petit écran, on laisse le texte couler naturellement
+     plutôt que de garder les <br> du desktop */
+  .hero__subtitle br {
+    display: none;
+  }
+
+  .hero__cta {
+    margin-top: 4px;
+  }
+
+  .hero__signature {
+    margin-top: 32px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}

@@ -1,0 +1,192 @@
+/* ============================================================
+   AU FIL DE NATH — Section Valeurs
+   Référence : Pages figma/VALEURS desktop.png + Valeurs mobile.png
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   STRUCTURE GÉNÉRALE
+---------------------------------------------------------- */
+
+.values {
+  padding: 56px 0 96px;
+  position: relative;
+  z-index: 2;          /* contenu au-dessus de la broderie */
+}
+
+.values__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+}
+
+
+/* ----------------------------------------------------------
+   EYEBROW — "Valeurs"
+---------------------------------------------------------- */
+
+.values__eyebrow {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 36px;
+  letter-spacing: -0.2px;
+}
+
+
+/* ----------------------------------------------------------
+   GRILLE DES 3 VALEURS
+---------------------------------------------------------- */
+
+.values__grid {
+  list-style: none;
+  margin: 0 auto 56px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;          /* resserré (48 → 24) */
+  row-gap: 24px;
+  max-width: 880px;          /* contraint la grille au centre */
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* centré */
+  text-align: center;        /* centré */
+}
+
+.value__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  /* L'icône SVG est en stroke marine, déjà conforme au design system */
+}
+
+.value__title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 12px;
+  letter-spacing: -0.2px;
+  line-height: 1.15;
+}
+
+.value__text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+
+/* ----------------------------------------------------------
+   PHOTO PANORAMIQUE
+   Même langage que la photo Hero : stroke 0.5 marine + ombre douce
+---------------------------------------------------------- */
+
+.values__photo {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.values__photo img {
+  display: block;
+  width: 100%;
+  /* Responsive proportionnel : 280px mini, 50vw idéal, 500px max */
+  max-width: clamp(280px, 50vw, 500px);
+  height: auto;
+  aspect-ratio: 5 / 3;       /* 500x300 */
+  object-fit: cover;
+  border-radius: 24px;
+  border: 0.5px solid var(--color-marine);
+  box-shadow: var(--shadow-marine-soft);
+  transition: filter 0.35s ease;
+}
+
+.values__photo:hover img {
+  filter: brightness(1.05);
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — Tablette (≤ 1024px)
+---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+  .values {
+    padding: 48px 0 80px;
+  }
+
+  .values__grid {
+    column-gap: 18px;
+    margin-bottom: 48px;
+  }
+
+  .value__title {
+    font-size: 22px;
+  }
+
+  .values__photo img {
+    /* override pour tablette : reste fluide jusqu'à 460px */
+    max-width: clamp(260px, 60vw, 460px);
+  }
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — Mobile (≤ 768px)
+   Empilement vertical, tout centré.
+---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .values {
+    padding: 32px 0 56px;
+  }
+
+  .values__eyebrow {
+    margin-bottom: 28px;
+    font-size: 19px;
+  }
+
+  .values__grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .value {
+    align-items: center;
+    text-align: center;
+  }
+
+  .value__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .value__title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .value__text {
+    max-width: 260px;
+    font-size: 14px;
+  }
+
+  .values__photo img {
+    max-width: 340px;
+    aspect-ratio: 5 / 3;    /* 340×204 */
+    border-radius: 20px;
+  }
+}

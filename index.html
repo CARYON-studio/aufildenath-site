@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Au fil de Nath — Créatrice Couturière</title>
+  <!-- Open Graph / partage réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Au fil de Nath" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Au fil de Nath — Créatrice Couturière" />
+  <meta property="og:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta property="og:url" content="https://aufildenath.fr/" />
+  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <meta name="description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+
+  <!-- Fonts Google : Playfair Display + Source Sans 3 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles du projet -->
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="values.css" />
+  <link rel="stylesheet" href="creations.css" />
+  <link rel="stylesheet" href="sections.css" />
+
+</head>
+
+<body class="page-wrapper">
+
+  <!-- ============================================================
+       HEADER PRINCIPAL — version Accueil (avec logo hero)
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+
+    <div class="site-header__nav-bar">
+      <div class="site-header__inner">
+
+        <a href="index.html" class="site-header__logo-sticky" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="220" height="80" />
+        </a>
+
+        <nav class="site-header__nav" aria-label="Navigation principale">
+          <ul class="site-header__nav-list">
+            <li><a href="index.html" class="site-header__nav-link is-active">Accueil</a></li>
+            <li><a href="boutique.html" class="site-header__nav-link">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html" class="site-header__nav-link">Sur mesure</a></li>
+            <li><a href="#realisations" class="site-header__nav-link">Projets réalisés</a></li>
+            <li><a href="#contact" class="site-header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient site-header__cta-sticky">
+          Parler de mon projet
+        </a>
+
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="site-header__logo-block" aria-hidden="false">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-hero" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath — Créatrice Couturière" width="500" height="181" />
+        </a>
+      </div>
+    </div>
+
+    <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <hr class="site-header__mobile-menu__sep" aria-hidden="true" />
+      <div class="site-header__mobile-menu__inner">
+        <nav aria-label="Menu mobile">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html">Sur mesure</a></li>
+            <li><a href="#realisations">Projets réalisés</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        <p class="site-header__mobile-menu__tagline">
+          Chaque projet est étudié avec attention<br />
+          Les délais et tarifs sont définis ensemble.
+        </p>
+      </div>
+      <hr class="site-header__mobile-menu__sep site-header__mobile-menu__sep--bottom" aria-hidden="true" />
+    </div>
+
+  </header>
+
+
+  <!-- ============================================================
+       MAIN — Sections de la page Accueil
+  ============================================================ -->
+  <main>
+
+    <!-- ── SECTION HERO ────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner">
+
+        <figure class="hero__image">
+          <img
+            src="assets/hero%20photo.png"
+            alt="Nathalie cousant un tissu rose pâle à sa machine à coudre"
+            width="640"
+            height="540"
+            loading="eager"
+          />
+        </figure>
+
+        <h1 id="hero-title" class="hero__title">
+          Des pièces faites main, pour petits et grands
+        </h1>
+
+        <p class="hero__subtitle">
+          Des créations cousues avec soin.<br>
+          Chaque pièce est unique et personnalisable,<br>
+          réalisée à la main avec attention.
+        </p>
+
+        <a href="#creations" class="btn btn--primary hero__cta">
+          Voir les créations
+        </a>
+
+        <p class="hero__signature">
+          Chaque création est imaginée et confectionnée par Nathalie,
+          avec patience et minutie.
+        </p>
+
+      </div>
+    </section>
+
+    <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+    <!-- ── SECTION VALEURS ────────────────────────────────── -->
+    <section class="values" aria-labelledby="values-eyebrow">
+      <div class="values__inner">
+
+        <h2 id="values-eyebrow" class="values__eyebrow">Valeurs</h2>
+
+        <ul class="values__grid">
+          <li class="value">
+            <img class="value__icon" src="assets/icon-needle.svg" alt="" aria-hidden="true" width="40" height="40" />
+            <h3 class="value__title">Fait main</h3>
+            <p class="value__text">
+              Chaque création est cousue à la main, avec le temps et l'attention nécessaires à un travail soigné.
+            </p>
+          </li>
+
+          <li class="value">
+            <img class="value__icon" src="assets/icon-thread.svg" alt="" aria-hidden="true" width="40" height="40" />
+            <h3 class="value__title">Pièces uniques</h3>
+            <p class="value__text">
+              Les créations sont réalisées en pièce unique ou en petite série, pour proposer des modèles originaux.
+            </p>
+          </li>
+
+          <li class="value">
+            <img class="value__icon" src="assets/icon-tag.svg" alt="" aria-hidden="true" width="40" height="40" />
+            <h3 class="value__title">Personnalisation</h3>
+            <p class="value__text">
+              Les modèles peuvent être adaptés selon vos envies : tissus, couleurs ou broderies.
+            </p>
+          </li>
+        </ul>
+
+        <figure class="values__photo">
+          <img
+            src="assets/Valeurs%20photo.png"
+            alt="Bobines de fil et linges pliés sur un plan de travail en bois"
+            loading="lazy"
+          />
+        </figure>
+
+      </div>
+    </section>
+
+    <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+
+    <!-- ── SECTION CRÉATIONS DU MOMENT (carrousel) ─────────── -->
+    <section class="creations" id="creations" aria-labelledby="creations-eyebrow">
+      <div class="creations__inner">
+
+        <h2 id="creations-eyebrow" class="creations__eyebrow">Créations du moment</h2>
+
+        <div class="creations__carousel">
+          <div class="creations__viewport" data-carousel-viewport>
+            <ul class="creations__track">
+
+              <li class="card">
+                <a href="fiche-produit.html?p=banane&from=home" class="card__link">
+                  <figure class="card__photo">
+                    <img src="Photos%20produits/Bananes%20livr%C3%A9es%20pour%20No%C3%ABl%20%F0%9F%8E%85%201.webp" alt="Banane personnalisable couleur corail" loading="lazy" />
+                  </figure>
+                  <h3 class="card__title">Banane personnalisable</h3>
+                  <p class="card__price">À partir de 29&nbsp;€</p>
+                </a>
+              </li>
+
+              <li class="card">
+                <a href="fiche-produit.html?p=turbulette&from=home" class="card__link">
+                  <figure class="card__photo">
+                    <img src="Photos%20produits/Turbulette%201.webp" alt="Turbulette bébé bleu pastel" loading="lazy" />
+                  </figure>
+                  <h3 class="card__title">Turbulette</h3>
+                  <p class="card__price">À partir de 30&nbsp;€</p>
+                </a>
+              </li>
+
+              <li class="card">
+                <a href="fiche-produit.html?p=sac-weekend&from=home" class="card__link">
+                  <figure class="card__photo">
+                    <img src="Photos%20produits/georges%205%201.webp" alt="Sac Weekend personnalisable" loading="lazy" />
+                  </figure>
+                  <h3 class="card__title">Sac Weekend personnalisable</h3>
+                  <p class="card__price">À partir de 35&nbsp;€</p>
+                </a>
+              </li>
+
+              <li class="card">
+                <a href="fiche-produit.html?p=protege-carnet-sante&from=home" class="card__link">
+                  <figure class="card__photo">
+                    <img src="Photos%20produits/574750256_17975969078946309_2476281317568177951_n.%201.webp" alt="Protège carnet de santé personnalisé" loading="lazy" />
+                  </figure>
+                  <h3 class="card__title">Protège carnet de santé</h3>
+                  <p class="card__price">À partir de 20&nbsp;€</p>
+                </a>
+              </li>
+
+              <li class="card">
+                <a href="fiche-produit.html?p=sac-a-dos-creche&from=home" class="card__link">
+                  <figure class="card__photo">
+                    <img src="Photos%20produits/sac%20%C3%A0%20dos%20cr%C3%A8che%206.webp" alt="Sac à dos crèche / maternelle" loading="lazy" />
+                  </figure>
+                  <h3 class="card__title">Sac à dos crèche / maternelle</h3>
+                  <p class="card__price">À partir de 30&nbsp;€</p>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="creations__nav" role="group" aria-label="Navigation du carrousel">
+          <button type="button" class="creations__arrow" data-carousel-prev aria-label="Création précédente">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button type="button" class="creations__arrow" data-carousel-next aria-label="Création suivante">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+
+        <p class="creations__caption">
+          Des créations artisanales, personnalisables et réalisées à la commande.<br>
+          Fabrication artisanale en France.
+        </p>
+
+        <a href="boutique.html" class="btn btn--gradient creations__cta">
+          Découvrir la boutique
+        </a>
+
+        <a href="#surmesure" class="creations__alt-link">
+          Une autre idée en tête&nbsp;?
+        </a>
+
+      </div>
+    </section>
+
+    <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+
+    <!-- ── SECTION SUR-MESURE (3 étapes) ─────────────────────── -->
+    <section class="surmesure" id="surmesure" aria-labelledby="surmesure-eyebrow">
+      <div class="surmesure__inner">
+
+        <h2 id="surmesure-eyebrow" class="surmesure__eyebrow">Sur mesure</h2>
+
+        <p class="surmesure__intro">
+          Une idée précise, un cadeau unique, une création adaptée à vos besoins&nbsp;? Échangeons
+          ensemble pour donner vie à votre projet, étape par étape.
+        </p>
+
+        <ol class="surmesure__steps">
+
+          <li class="step">
+            <img class="step__icon" src="assets/icon-needle.svg" alt="" aria-hidden="true" width="36" height="36" />
+            <h3 class="step__title">Échange</h3>
+            <p class="step__text">
+              On discute de votre idée : usage, matières, couleurs, broderie souhaitée.
+            </p>
+          </li>
+
+          <li class="step">
+            <img class="step__icon" src="assets/icon-thread.svg" alt="" aria-hidden="true" width="36" height="36" />
+            <h3 class="step__title">Création</h3>
+            <p class="step__text">
+              Je couds votre pièce à la main, avec le tissu et les finitions choisis ensemble.
+            </p>
+          </li>
+
+          <li class="step">
+            <img class="step__icon" src="assets/icon-gift.svg" alt="" aria-hidden="true" width="36" height="36" />
+            <h3 class="step__title">Finalisation</h3>
+            <p class="step__text">
+              Votre création vous est livrée, prête à offrir ou à utiliser dès réception.
+            </p>
+          </li>
+
+        </ol>
+
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient surmesure__cta">
+          Parler de mon projet
+        </a>
+
+      </div>
+    </section>
+
+    <img class="section-separator" id="realisations" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+
+    <!-- ── SECTION GALERIE — Créations qui ont déjà trouvé leur place
+         Carrousel de cards projet (réutilise les classes .card et le mécanisme
+         carrousel — second instance, géré par creations.js sur data-attribute) -->
+    <section class="gallery" aria-labelledby="gallery-eyebrow">
+      <div class="gallery__inner">
+
+        <h2 id="gallery-eyebrow" class="creations__eyebrow">Créations qui ont déjà trouvé leur place</h2>
+
+        <div class="creations__carousel">
+          <div class="creations__viewport" data-carousel-viewport="gallery">
+            <ul class="creations__track">
+
+              <li class="card">
+                <div class="card__link card__link--static">
+                  <p class="project-card__for">Pour Martin</p>
+                  <h3 class="project-card__name">Range doudou</h3>
+                  <p class="project-card__desc">Broderie du prénom, choix des tissus et couleurs personnalisés.</p>
+                  <figure class="project-card__photo">
+                    <img src="Photos%20produits/Broderie%20Martin%201.webp" alt="Range doudou brodé pour Martin" loading="lazy" />
+                  </figure>
+                  </div>
+              </li>
+
+              <li class="card">
+                <div class="card__link card__link--static">
+                  <p class="project-card__for">Pour Loïs</p>
+                  <h3 class="project-card__name">Sacoche en jean</h3>
+                  <p class="project-card__desc">Choix des tissus, couleurs personnalisées et lanière sur mesure.</p>
+                  <figure class="project-card__photo">
+                    <img src="Photos%20produits/sacoche%20en%20jean%201.webp" alt="Sacoche en jean sur mesure pour Loïs" loading="lazy" />
+                  </figure>
+                  </div>
+              </li>
+
+              <li class="card">
+                <div class="card__link card__link--static">
+                  <p class="project-card__for">Pour Céleste</p>
+                  <h3 class="project-card__name">Sortie de bain</h3>
+                  <p class="project-card__desc">Broderie du prénom, tissus et couleurs personnalisés.</p>
+                  <figure class="project-card__photo">
+                    <img src="Photos%20produits/Broderie%20c%C3%A9leste%201.webp" alt="Sortie de bain brodée pour Céleste" loading="lazy" />
+                  </figure>
+                  </div>
+              </li>
+
+              <li class="card">
+                <div class="card__link card__link--static">
+                  <p class="project-card__for">Pour Joachim</p>
+                  <h3 class="project-card__name">Doudou personnalisé</h3>
+                  <p class="project-card__desc">Broderie du prénom et choix des tissus pour un cadeau de naissance.</p>
+                  <figure class="project-card__photo">
+                    <img src="Photos%20produits/Broderie%20Joachim%201.webp" alt="Doudou brodé pour Joachim" loading="lazy" />
+                  </figure>
+                  </div>
+              </li>
+
+              <li class="card">
+                <div class="card__link card__link--static">
+                  <p class="project-card__for">Pour le club Viet Vo Dao</p>
+                  <h3 class="project-card__name">Broderie d'écusson</h3>
+                  <p class="project-card__desc">Broderie du logo du club sur plusieurs pièces, commande groupée.</p>
+                  <figure class="project-card__photo">
+                    <img src="Photos%20produits/broderie%20viet%20vo%20dao%202.webp" alt="Broderie écusson Viet Vo Dao" loading="lazy" />
+                  </figure>
+                  </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="creations__nav" role="group" aria-label="Navigation du carrousel des réalisations">
+          <button type="button" class="creations__arrow" data-carousel-prev aria-label="Précédent">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="creations__arrow" data-carousel-next aria-label="Suivant">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+
+    <!-- ── SECTION AVIS CLIENTS — "Elles en parlent" ─────────── -->
+    <section class="testimonials" aria-labelledby="testimonials-eyebrow">
+      <div class="testimonials__inner">
+
+        <h2 id="testimonials-eyebrow" class="testimonials__eyebrow">Elles en parlent</h2>
+
+        <ul class="testimonials__grid">
+
+          <li class="testimonial">
+            <p class="testimonial__source">
+              Commande Vinted –<br>Sac banane personnalisée
+            </p>
+            <p class="testimonial__author">Audrey</p>
+            <p class="testimonial__quote">
+              envoi express transaction fluide et agréable aussi beau qu'utile parfait merci à vous
+            </p>
+          <figure class="testimonial__photo">
+              <img src="Photos%20produits/518413501_17963008259946309_6810695472236855314_n%201.webp" alt="Sac banane personnalisé reçu par Audrey" loading="lazy" />
+            </figure>
+            </li>
+
+          <li class="testimonial">
+            <p class="testimonial__source">
+              Commande Vinted –<br>Babynest personnalisée
+            </p>
+            <p class="testimonial__author">Flore</p>
+            <p class="testimonial__quote">
+              très bonne communication.. vendeuse à l'écoute.. rapide et arrangeante 😊 article fait main très bien réalisé... je recommande +++
+            </p>
+          <figure class="testimonial__photo">
+              <img src="Photos%20produits/Babynest.webp" alt="Babynest personnalisé reçu par Flore" loading="lazy" />
+            </figure>
+            </li>
+
+          <li class="testimonial">
+            <p class="testimonial__source">
+              Commande Instagram –<br>Porte lecteur de carte vital personnalisée
+            </p>
+            <p class="testimonial__author">Morgane</p>
+            <p class="testimonial__quote">
+              Bonjour, j'ai reçu aujourd'hui la pochette. Elle est top, je vous enverrai des photos. Encore merci.
+            </p>
+          <figure class="testimonial__photo">
+              <img src="Photos%20produits/image%202.webp" alt="Porte lecteur de carte vitale personnalisé reçu par Morgane" loading="lazy" />
+            </figure>
+            </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+
+    <!-- ── SECTION CTA FINAL ──────────────────────────────────── -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <div class="final-cta__inner">
+
+        <h2 id="final-cta-title" class="final-cta__title">
+          Un projet, une idée, une envie&nbsp;?
+        </h2>
+
+        <p class="final-cta__text">
+          Que ce soit pour offrir, pour vous faire plaisir ou pour personnaliser une pièce unique,
+          je suis à votre écoute pour donner vie à votre idée.
+        </p>
+
+        <div class="final-cta__buttons">
+          <a href="boutique.html" class="btn btn--gradient">Voir les créations</a>
+          <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER — Logo + tagline + réseaux sociaux + copyright
+  ============================================================ -->
+  <footer class="site-footer" id="contact" role="contentinfo">
+    <div class="site-footer__inner">
+
+      <!-- 1) Réseaux sociaux : icône + label sous chaque -->
+      <div class="site-footer__social" aria-label="Retrouvez Au fil de Nath sur les réseaux">
+        <a href="https://www.instagram.com/au_fil_de_nath/" target="_blank" rel="noopener">
+          <img src="assets/logo%20insta.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Instagram</span>
+        </a>
+        <a href="https://www.vinted.fr/member/133558715-aufilsdenath?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnB0zWrY0VCp5iScxJnM4wXbTlK7Rzn_t2t8GuV2q97yDfnE0mERHfE2xr-8g_aem_fn0HZ6scnlGo0cQ_6BgeYw" target="_blank" rel="noopener">
+          <img src="assets/Check%20vinted.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Vinted</span>
+        </a>
+      </div>
+
+      <!-- 2) Séparateur dashed pastel -->
+      <img class="site-footer__separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+      <!-- 3) Logo seul (gauche) + retour en haut (droite) -->
+      <div class="site-footer__bottom-row">
+        <a href="index.html" class="site-footer__logo" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20seul%20final.svg" alt="Au fil de Nath" />
+        </a>
+        <button type="button" class="site-footer__top-link" data-back-to-top aria-label="Retour en haut de la page">
+          Retour en haut
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- 4) Copyright -->
+      <div class="site-footer__bottom">
+        © <span data-footer-year>2026</span> Au fil de Nath — Tous droits réservés.
+        · <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+      </div>
+
+      <!-- 5) Mention créateur -->
+      <div class="site-footer__caryon">
+        <a href="https://caryonstudio.fr" target="_blank" rel="noopener" class="site-footer__caryon-link">
+          <img src="assets/caryon-logo.svg" alt="" aria-hidden="true" />
+          Créé par CARYON →
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="header.js"></script>
+  <script src="creations.js"></script>
+  <script>
+    /* ── Scroll restoration ── */
+    (function () {
+      var key = 'scroll_home';
+      var saved = sessionStorage.getItem(key);
+      if (saved !== null) {
+        sessionStorage.removeItem(key);
+        requestAnimationFrame(function () { window.scrollTo(0, parseInt(saved, 10)); });
+      }
+    })();
+
+    /* Sauvegarde scrollY avant de naviguer vers une fiche produit */
+    document.querySelectorAll('.card__link[href*="fiche-produit"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        sessionStorage.setItem('scroll_home', window.scrollY);
+      });
+    });
+  </script>
+</body>
+</html>

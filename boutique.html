@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique — Au fil de Nath</title>
+  <!-- Open Graph / partage réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Au fil de Nath" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Boutique — Au fil de Nath" />
+  <meta property="og:description" content="Découvrez les créations Au fil de Nath : univers bébé, accessoires, sacs &amp; maroquinerie. Pièces uniques cousues main et personnalisables." />
+  <meta property="og:url" content="https://aufildenath.fr/boutique.html" />
+  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Boutique — Au fil de Nath" />
+  <meta name="twitter:description" content="Découvrez les créations Au fil de Nath : univers bébé, accessoires, sacs &amp; maroquinerie. Pièces uniques cousues main et personnalisables." />
+  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <meta name="description" content="Découvrez les créations cousues main : univers bébé, accessoires, sacs et maroquinerie. Pièces uniques et personnalisables." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="creations.css" />
+  <link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+
+<body class="page-wrapper">
+
+  <!-- HEADER pages intérieures (back + logo, pas de logo hero) -->
+  <header class="site-header site-header--inner" id="site-header">
+    <div class="site-header__nav-bar">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-sticky" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="220" height="80" />
+        </a>
+        <nav class="site-header__nav" aria-label="Navigation principale">
+          <ul class="site-header__nav-list">
+            <li><a href="index.html" class="site-header__nav-link">Accueil</a></li>
+            <li><a href="boutique.html" class="site-header__nav-link is-active">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html" class="site-header__nav-link">Sur mesure</a></li>
+            <li><a href="index.html#realisations" class="site-header__nav-link">Projets réalisés</a></li>
+            <li><a href="index.html#contact" class="site-header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient site-header__cta-sticky">Parler de mon projet</a>
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="site-header__logo-block">
+      <div class="site-header__inner">
+        <a href="index.html" class="back-link">← Retour</a>
+        <a href="index.html" class="site-header__logo-hero" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="380" height="138" />
+        </a>
+      </div>
+    </div>
+
+    <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <hr class="site-header__mobile-menu__sep" aria-hidden="true" />
+      <div class="site-header__mobile-menu__inner">
+        <nav aria-label="Menu mobile">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html">Sur mesure</a></li>
+            <li><a href="index.html#realisations">Projets réalisés</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        <p class="site-header__mobile-menu__tagline">
+          Chaque projet est étudié avec attention<br />
+          Les délais et tarifs sont définis ensemble.
+        </p>
+      </div>
+      <hr class="site-header__mobile-menu__sep site-header__mobile-menu__sep--bottom" aria-hidden="true" />
+    </div>
+  </header>
+
+
+  <main>
+    <section class="page">
+      <div class="page__inner">
+
+        <!-- Séparateur au-dessus du titre -->
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin-bottom: 48px;" />
+
+        <h1 class="page__title">Boutique</h1>
+        <p class="page__intro">Découvrez l'ensemble des créations personnalisables.</p>
+
+        <!-- Filtres catégories (ancres) -->
+        <div class="shop-filters" role="tablist" aria-label="Catégories">
+          <a href="#univers-bebe" class="shop-filter is-active">Univers bébé</a>
+          <a href="#accessoires" class="shop-filter">Accessoires</a>
+          <a href="#sacs" class="shop-filter">Sacs &amp; maroquinerie</a>
+        </div>
+
+        <!-- Séparateur entre les filtres et la première catégorie -->
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin-bottom: 48px;" />
+
+        <!-- ── Univers bébé ── -->
+        <section class="shop-category" id="univers-bebe">
+          <h2 class="shop-category__title">Univers bébé</h2>
+          <ul class="shop-grid">
+            <li class="card">
+              <a href="fiche-produit.html?p=turbulette&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Turbulette%201.webp" alt="Turbulette" loading="lazy" /></figure>
+                <h3 class="card__title">Turbulette</h3>
+                <p class="card__price">À partir de 30&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=babynest&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/569387996_17974343630946309_5089851895889682679_n.%201.webp" alt="Babynest" loading="lazy" /></figure>
+                <h3 class="card__title">Babynest</h3>
+                <p class="card__price">À partir de 60&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=sac-a-dos-creche&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/sac%20%C3%A0%20dos%20cr%C3%A8che%206.webp" alt="Sac à dos crèche / maternelle" loading="lazy" /></figure>
+                <h3 class="card__title">Sac à dos crèche / maternelle</h3>
+                <p class="card__price">À partir de 30&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=protege-carnet-sante&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/574750256_17975969078946309_2476281317568177951_n.%201.webp" alt="Protège carnet de santé" loading="lazy" /></figure>
+                <h3 class="card__title">Protège carnet de santé</h3>
+                <p class="card__price">À partir de 20&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=doudou-lapin&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Doudou%20lapin%201.webp" alt="Doudou Lapin" loading="lazy" /></figure>
+                <h3 class="card__title">Doudou Lapin</h3>
+                <p class="card__price">À partir de 18&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=sac-a-langer&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Sac%20a%20langer.webp" alt="Sac à langer & tapis nomade" loading="lazy" /></figure>
+                <h3 class="card__title">Sac à langer &amp; tapis nomade</h3>
+                <p class="card__price">100 € l'ensemble · 40 € le tapis seul</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=bavoir-maternelle&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/bavoir%20de%20maternelle.webp" alt="Bavoir de maternelle personnalisé" loading="lazy" /></figure>
+                <h3 class="card__title">Bavoir de maternelle</h3>
+                <p class="card__price">À partir de 10&nbsp;€</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Séparateur entre catégories -->
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin: 16px auto 48px;" />
+
+        <!-- ── Accessoires ── -->
+        <section class="shop-category" id="accessoires">
+          <h2 class="shop-category__title">Accessoires</h2>
+          <ul class="shop-grid">
+            <li class="card">
+              <a href="fiche-produit.html?p=pochette-cotons-lavables&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Pochette%20%2B%20coton%209%201.webp" alt="Pochette + cotons lavables" loading="lazy" /></figure>
+                <h3 class="card__title">Pochette + cotons lavables</h3>
+                <p class="card__price">À partir de 15&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=serviette-de-tete&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Serviette%20de%20t%C3%AAte.webp" alt="Serviette de tête" loading="lazy" /></figure>
+                <h3 class="card__title">Serviette de tête</h3>
+                <p class="card__price">À partir de 18&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=pochette-soignante&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/552950121_17970917090946309_2205476163409626417_n.%201.webp" alt="Pochette soignante" loading="lazy" /></figure>
+                <h3 class="card__title">Pochette soignante</h3>
+                <p class="card__price">À partir de 12&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=trousse-agenda&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Trousse%20agenda%20(1).webp" alt="Trousse agenda" loading="lazy" /></figure>
+                <h3 class="card__title">Trousse agenda</h3>
+                <p class="card__price">À partir de 10&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=marque-page&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Marque%20page%203%201.webp" alt="Marque-page" loading="lazy" /></figure>
+                <h3 class="card__title">Marque-page</h3>
+                <p class="card__price">À partir de 5&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=essuie-tout-lavable&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Essuie%20tout%20(3).webp" alt="Essuie-tout lavable" loading="lazy" /></figure>
+                <h3 class="card__title">Essuie-tout lavable — 8 feuilles</h3>
+                <p class="card__price">À partir de 25&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=mugbag&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Mugbag%202.webp" alt="Mugbag" loading="lazy" /></figure>
+                <h3 class="card__title">Mugbag</h3>
+                <p class="card__price">À partir de 20&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=pochette-a-livre&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/pochette%20%C3%A0%20livre%20(1).webp" alt="Pochette à livre" loading="lazy" /></figure>
+                <h3 class="card__title">Pochette à livre</h3>
+                <p class="card__price">À partir de 15&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=trousse-de-toilette&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Trousse%20de%20toilette%20(6).webp" alt="Trousse de toilette" loading="lazy" /></figure>
+                <h3 class="card__title">Trousse de toilette</h3>
+                <p class="card__price">À partir de 40&nbsp;€</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Séparateur entre catégories -->
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin: 16px auto 48px;" />
+
+        <!-- ── Sacs &amp; maroquinerie ── -->
+        <section class="shop-category" id="sacs">
+          <h2 class="shop-category__title">Sacs &amp; maroquinerie</h2>
+          <ul class="shop-grid">
+            <li class="card">
+              <a href="fiche-produit.html?p=sac-weekend&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/georges%205%201.webp" alt="Sac Weekend" loading="lazy" /></figure>
+                <h3 class="card__title">Sac Weekend</h3>
+                <p class="card__price">À partir de 35&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=banane&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/Bananes%20livr%C3%A9es%20pour%20No%C3%ABl%20%F0%9F%8E%85%201.webp" alt="Banane personnalisable" loading="lazy" /></figure>
+                <h3 class="card__title">Banane personnalisable</h3>
+                <p class="card__price">À partir de 19&nbsp;€</p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="fiche-produit.html?p=housse-pc&from=boutique" class="card__link">
+                <figure class="card__photo"><img src="Photos%20produits/ordi%204.webp" alt="Housse PC" loading="lazy" /></figure>
+                <h3 class="card__title">Housse PC personnalisable</h3>
+                <p class="card__price">À partir de 30&nbsp;€</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Séparateur avant le CTA final -->
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin: 16px auto 48px;" />
+
+        <!-- "Vous ne trouvez pas..." -->
+        <div class="shop-tail">
+          <h2 class="shop-tail__title">Vous ne trouvez pas exactement ce que vous cherchez&nbsp;?</h2>
+          <p class="shop-tail__text">Un projet particulier en tête&nbsp;? Parlons-en.</p>
+          <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (identique à l'accueil) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+
+      <!-- 1) Réseaux sociaux : icône + label sous chaque -->
+      <div class="site-footer__social" aria-label="Retrouvez Au fil de Nath sur les réseaux">
+        <a href="https://www.instagram.com/au_fil_de_nath/" target="_blank" rel="noopener">
+          <img src="assets/logo%20insta.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Instagram</span>
+        </a>
+        <a href="https://www.vinted.fr/member/133558715-aufilsdenath?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnB0zWrY0VCp5iScxJnM4wXbTlK7Rzn_t2t8GuV2q97yDfnE0mERHfE2xr-8g_aem_fn0HZ6scnlGo0cQ_6BgeYw" target="_blank" rel="noopener">
+          <img src="assets/Check%20vinted.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Vinted</span>
+        </a>
+      </div>
+
+      <!-- 2) Séparateur -->
+      <img class="site-footer__separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+      <!-- 3) Logo seul (gauche) + retour en haut (droite) -->
+      <div class="site-footer__bottom-row">
+        <a href="index.html" class="site-footer__logo" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20seul%20final.svg" alt="Au fil de Nath" />
+        </a>
+        <button type="button" class="site-footer__top-link" data-back-to-top aria-label="Retour en haut de la page">
+          Retour en haut
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- 4) Copyright -->
+      <div class="site-footer__bottom">
+        © <span data-footer-year>2026</span> Au fil de Nath — Tous droits réservés.
+        · <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+      </div>
+
+      <!-- 5) Mention créateur -->
+      <div class="site-footer__caryon">
+        <a href="https://caryonstudio.fr" target="_blank" rel="noopener" class="site-footer__caryon-link">
+          <img src="assets/caryon-logo.svg" alt="" aria-hidden="true" />
+          Créé par CARYON →
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="header.js"></script>
+  <script>
+    /* ── Scroll restoration ── */
+    /* Restaure la position de scroll si on revient depuis une fiche produit */
+    (function () {
+      const key = 'scroll_boutique';
+      const saved = sessionStorage.getItem(key);
+      if (saved !== null) {
+        sessionStorage.removeItem(key);
+        requestAnimationFrame(() => window.scrollTo(0, parseInt(saved, 10)));
+      }
+    })();
+
+    /* Sauvegarde le scrollY avant de quitter vers une fiche produit */
+    document.querySelectorAll('.card__link[href*="fiche-produit"]').forEach(link => {
+      link.addEventListener('click', () => {
+        sessionStorage.setItem('scroll_boutique', window.scrollY);
+      });
+    });
+
+    /* Filtres : mise à jour de l'état actif (le défilement est géré par header.js) */
+    document.querySelectorAll('.shop-filter[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.shop-filter').forEach(f => f.classList.remove('is-active'));
+        link.classList.add('is-active');
+      });
+    });
+  </script>
+</body>
+</html>

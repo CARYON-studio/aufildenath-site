@@ -1,0 +1,626 @@
+/* ============================================================
+   AU FIL DE NATH — Styles pages secondaires
+   Boutique, Fiche produit, Formulaire, Sur-mesure, Merci, Échec
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   STRUCTURE COMMUNE — Page wrapper interne
+---------------------------------------------------------- */
+
+.page {
+  padding: 24px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.page__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+}
+
+.page__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);                /* 52px desktop / 32px mobile */
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 16px;
+  letter-spacing: var(--tracking-h1);
+  line-height: 1.05;
+}
+
+.page__intro {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+  margin: 0 0 40px;
+  max-width: 600px;
+  opacity: 0.85;
+}
+
+
+/* ============================================================
+   BOUTIQUE — Filtres + grille par catégorie
+   ============================================================ */
+
+.shop-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 64px;
+}
+
+/* Filtres catégorie — style .btn--primary uniforme (marine/écru) */
+.shop-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--color-marine);
+  background-color: var(--color-marine);
+  font-family: var(--font-sans);
+  font-size: var(--text-btn);
+  font-weight: var(--weight-regular);
+  color: var(--color-ecru);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.shop-filter:hover {
+  background-color: var(--color-marine-darker);
+  border-color: var(--color-marine-darker);
+  transform: scale(1.02);
+}
+
+.shop-category {
+  margin-bottom: 72px;
+}
+
+/* Séparateurs gérés via <img class="section-separator"> dans le HTML */
+
+.shop-category__title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 28px;
+  letter-spacing: -0.2px;
+}
+
+.shop-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Cards dans la boutique : photo pleine largeur, padding compact, max 320px */
+.shop-grid .card {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop-grid .card__link {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.shop-grid .card__photo {
+  max-width: none;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 1024px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .shop-grid .card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .shop-grid .card {
+    max-width: 400px;
+  }
+  .shop-category { margin-bottom: 40px; }
+}
+
+@media (max-width: 480px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+
+/* "Vous ne trouvez pas exactement ce que vous cherchez ?" */
+.shop-tail {
+  margin: 32px 0 0;
+  padding: 32px 0;
+  text-align: center;
+}
+
+.shop-tail__title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 12px;
+}
+
+.shop-tail__text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  margin: 0 0 24px;
+  opacity: 0.8;
+}
+
+
+/* ============================================================
+   FICHE PRODUIT
+   Photo principale + miniatures + description + options + CTA
+   ============================================================ */
+
+.product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) 1fr;
+  column-gap: 56px;
+  row-gap: 32px;
+  margin-bottom: 40px;
+}
+
+.product__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product__main {
+  position: relative;            /* nécessaire au repli sans aspect-ratio */
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;           /* hauteur identique sur TOUTES les fiches */
+  margin: 0;
+  overflow: hidden;              /* recadrage propre, aucun débordement */
+  border-radius: 18px;
+  border: 0.5px solid var(--color-marine);
+  box-shadow: var(--shadow-marine-soft);
+  background: #FAF8F4;           /* fond neutre pendant le chargement */
+}
+
+.product__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* jamais d'étirement ni de déformation */
+  object-position: center;       /* cadrage centré par défaut */
+  display: block;
+}
+
+/* Placeholder "photo à venir" — conserve exactement le même carré */
+.product__main--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product__main--placeholder::after {
+  content: "Photo à venir";
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  opacity: 0.5;
+}
+
+/* Repli pour les navigateurs sans support de aspect-ratio (anciens Safari/Firefox) */
+@supports not (aspect-ratio: 1 / 1) {
+  .product__main { height: 0; padding-top: 100%; }
+  .product__main img { position: absolute; inset: 0; }
+}
+
+.product__thumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product__thumb {
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-sizing: border-box;
+  flex: 0 0 64px;                /* taille fixe, jamais compressée */
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px solid var(--color-marine);
+  cursor: pointer;
+}
+
+.product__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product__title {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.product__sizes {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  margin: 0 0 16px;
+  opacity: 0.85;
+}
+
+.product__price {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  color: var(--color-marine);
+  margin: 0 0 24px;
+}
+
+.product__desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.product__options-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 32px 0 16px;
+  letter-spacing: -0.2px;
+}
+
+.product__options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0 0 28px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+}
+
+.product__option-title {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  margin: 0 0 6px;
+}
+
+.product__cta {
+  margin-top: 16px;
+  padding: 14px 36px;
+  display: inline-flex;
+}
+
+/* ── Fix débordement galerie (fiches à 6 photos et + / WebView Messenger Android) ──
+   Une bande de miniatures plus large que l'écran "gonfle" la colonne sur les moteurs
+   qui ne neutralisent pas min-width:auto sur un conteneur scrollable (WebView Messenger),
+   ce qui étire la photo principale. On force min-width:0 sur toute la chaîne flex/grid
+   pour confiner le scroll horizontal. Aucun effet sur desktop/tablette. */
+.product { min-width: 0; }
+.product__gallery-wrap,
+.product__detail { min-width: 0; }
+.product__gallery { min-width: 0; max-width: 100%; }
+.product__thumbs { min-width: 0; max-width: 100%; }
+
+@media (max-width: 1024px) {
+  .product { column-gap: 32px; }
+  .product__title { font-size: 28px; }
+}
+
+@media (max-width: 768px) {
+  .product {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .product__main {
+    max-width: 100%;            /* occupe toute la largeur de la colonne */
+    margin: 0 auto;             /* centré */
+    aspect-ratio: 1 / 1;
+    max-height: 72vh;           /* sécurité : ne pousse jamais le contenu trop bas */
+  }
+  /* Sur mobile, les miniatures passent à la ligne au lieu de déborder
+     → garantie absolue que la photo principale ne s'étire jamais. */
+  .product__thumbs { flex-wrap: wrap; overflow-x: visible; }
+  .product__options { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   FORMULAIRE — Pages "Formulaire produit" et "Parler de mon projet"
+   ============================================================ */
+
+.form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form__product-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.form__product-preview img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 0.5px solid var(--color-marine);
+  margin-bottom: 12px;
+  transition: filter 0.2s ease;
+}
+
+.form__product-preview img:hover,
+.form__surmesure-photo:hover {
+  filter: brightness(1.05);
+}
+
+.form__product-preview-price {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--color-marine);
+  margin: 0;
+}
+
+.form__intro {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  line-height: 1.7;
+  margin: 0 0 32px;
+  opacity: 0.85;
+}
+
+.form__group {
+  margin-bottom: 24px;
+}
+
+.form__label {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: var(--weight-medium);
+  color: var(--color-marine);
+  margin: 0 0 8px;
+  letter-spacing: -0.1px;
+}
+
+.form__input,
+.form__textarea,
+.form__select {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(47, 58, 68, 0.30);
+  outline: none;
+  transition: border-color var(--transition-base),
+              background-size var(--transition-base);
+}
+
+/* Focus — trait dégradé pastel 2px via background-image */
+.form__input:focus,
+.form__textarea:focus {
+  border-bottom: none;
+  padding-bottom: 13px; /* compense le border retiré */
+  background-image: linear-gradient(to right, #F2D6DC, #E3DDF0, #DDE7F0);
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
+
+/* .form__select:focus géré plus bas avec les autres états select */
+
+/* Supprime le style navigateur sur :invalid au chargement (avant interaction) */
+.form__input:invalid:not(:user-invalid):not(.is-invalid),
+.form__textarea:invalid:not(:user-invalid):not(.is-invalid),
+.form__select:invalid:not(:user-invalid):not(.is-invalid) {
+  box-shadow: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(47, 58, 68, 0.30);
+}
+
+/* État invalide — :user-invalid se déclenche après interaction (modern browsers)
+   + fallback .is-invalid via JS pour anciens navigateurs */
+.form__input:user-invalid,
+.form__textarea:user-invalid,
+.form__select:user-invalid,
+.form__input.is-invalid,
+.form__textarea.is-invalid,
+.form__select.is-invalid {
+  border-bottom: 2px solid #C96A6A !important;
+  background-image: none !important;
+  padding-bottom: 11px;
+}
+
+/* Message d'erreur — masqué par défaut, affiché via .is-visible (JS) */
+.form__error {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: var(--weight-light);
+  color: #C96A6A;
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+
+.form__error.is-visible {
+  display: block;
+}
+
+/* Wrapper submit + footnote — centré */
+.form__submit-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+/* Note de réassurance sous le bouton */
+.form__footnote {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  text-align: center;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-sans);
+}
+
+/* ============================================================
+   CUSTOM SELECT — composant dropdown sur mesure
+   ============================================================ */
+
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px 12px 11px 14px;
+  background-color: var(--color-ecru);
+  border: 1px solid rgba(47, 58, 68, 0.28);
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-base),
+              border-color var(--transition-base);
+}
+
+.custom-select__trigger:hover {
+  background: linear-gradient(to right, #F2D6DC, #E3DDF0, #DDE7F0);
+  border-color: rgba(47, 58, 68, 0.18);
+}
+
+.custom-select__trigger[aria-expanded="true"] {
+  background: linear-gradient(to right, #F2D6DC, #E3DDF0, #DDE7F0);
+  border-color: rgba(47, 58, 68, 0.18);
+  border-radius: 10px 10px 0 0;
+}
+
+.custom-select__arrow {
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+.custom-select__trigger[aria-expanded="true"] .custom-select__arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background-color: var(--color-ecru);
+  border: 1px solid rgba(47, 58, 68, 0.18);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  box-shadow: 0 6px 16px rgba(47, 58, 68, 0.10);
+}
+
+.custom-select__option {
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-light);
+  color: var(--color-marine);
+  cursor: pointer;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.custom-select__option:hover {
+  background: linear-gradient(to right, #F2D6DC, #E3DDF0, #DDE7F0);
+}
+
+.custom-select__option.is-selected {
+  background-color: var(--color-marine);
+  color: var(--color-ecru);
+}
+.custom-select__option.is-selected:hover {
+  background-color: var(--color-marine-darker);
+  color: var(--color-ecru);
+}
+
+,

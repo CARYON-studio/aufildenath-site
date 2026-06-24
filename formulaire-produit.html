@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parlons de votre création — Au fil de Nath</title>
+  <!-- Open Graph / partage réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Au fil de Nath" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Parlons de votre création — Au fil de Nath" />
+  <meta property="og:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta property="og:url" content="https://aufildenath.fr/formulaire-produit.html" />
+  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Parlons de votre création — Au fil de Nath" />
+  <meta name="twitter:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="pages.css" />
+
+  <style>
+    /* ── Aperçu produit ── */
+    .form__product-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    .form__product-intro {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: var(--weight-light);
+      color: var(--color-marine);
+      margin: 0 0 16px;
+      opacity: 0.75;
+    }
+    .form__product-thumb {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 0.5px solid rgba(47,58,68,0.2);
+      background: var(--gradient-pastel);
+      margin-bottom: 10px;
+    }
+    .form__product-thumb--placeholder {
+      background: linear-gradient(135deg, var(--color-violet), var(--color-rose), var(--color-bleu-pastel));
+    }
+    .form__product-price {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: var(--weight-regular);
+      color: var(--color-marine);
+      margin: 0;
+    }
+
+    /* ── Séparateurs dans le form ── */
+    .form__sep {
+      border: none;
+      border-top: 0.5px solid rgba(47,58,68,0.15);
+      margin: 32px 0;
+    }
+
+    /* ── Ligne "Type de broderie" : label inline + select ── */
+    .form__group--inline {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .form__group--inline .form__label {
+      margin: 0;
+      white-space: nowrap;
+    }
+    .form__group--inline .custom-select {
+      flex: 1;
+      min-width: 220px;
+    }
+    .form__group--inline .form__hint {
+      flex-basis: 100%;
+      margin-top: 8px;
+    }
+
+    /* ── Hint exemple (textarea) ── */
+    .form__example {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: var(--weight-light);
+      color: var(--color-marine);
+      opacity: 0.6;
+      margin: 6px 0 0;
+      line-height: 1.6;
+    }
+    .form__example strong {
+      display: block;
+      margin-bottom: 2px;
+      font-weight: var(--weight-regular);
+    }
+
+    /* ── "Plus votre description est précise…" ── */
+    .form__emphasis {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: var(--weight-regular);
+      color: var(--color-marine);
+      text-align: center;
+      margin: 8px 0 0;
+      line-height: 28px;
+      opacity: 1;
+    }
+
+    /* ── "Vous pouvez préciser les détails…" ── */
+    .form__hint {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: var(--weight-regular);
+      color: var(--color-marine);
+      line-height: 28px;
+      opacity: 1;
+      margin: 8px 0 0;
+    }
+
+    /* ── Tarifs indicatifs ── */
+    .form__tarifs {
+      margin: 32px 0 0;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+    .form__tarifs-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: var(--weight-medium);
+      color: var(--color-marine);
+      margin: 0 0 20px;
+      letter-spacing: -0.2px;
+    }
+    .form__tarifs-grid {
+      display: grid;
+      gap: 24px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: var(--weight-light);
+      color: var(--color-marine);
+      line-height: 1.75;
+    }
+    .form__tarifs-grid strong {
+      display: block;
+      font-weight: var(--weight-regular);
+      margin-bottom: 4px;
+    }
+    .form__tarifs-note {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--color-marine);
+      opacity: 0.6;
+      margin: 12px 0 0;
+      font-weight: var(--weight-light);
+    }
+
+    /* ── Submit + footnote ── */
+    .form__submit-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    .form__footnote {
+      text-align: center;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .form__group--inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .form__group--inline .custom-select { min-width: 0; width: 100%; }
+    }
+  </style>
+</head>
+
+<body class="page-wrapper">
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="site-header site-header--inner" id="site-header">
+    <div class="site-header__nav-bar">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-sticky" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="220" height="80" />
+        </a>
+        <nav class="site-header__nav" aria-label="Navigation principale">
+          <ul class="site-header__nav-list">
+            <li><a href="index.html" class="site-header__nav-link">Accueil</a></li>
+            <li><a href="boutique.html" class="site-header__nav-link">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html" class="site-header__nav-link">Sur mesure</a></li>
+            <li><a href="index.html#realisations" class="site-header__nav-link">Projets réalisés</a></li>
+            <li><a href="index.html#contact" class="site-header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient site-header__cta-sticky">Parler de mon projet</a>
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="site-header__logo-block">
+      <div class="site-header__inner">
+        <a href="boutique.html" class="back-link" id="form-back-link">← Retour</a>
+        <a href="index.html" class="site-header__logo-hero" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="380" height="138" />
+        </a>
+      </div>
+    </div>
+
+    <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <hr class="site-header__mobile-menu__sep" aria-hidden="true" />
+      <div class="site-header__mobile-menu__inner">
+        <nav aria-label="Menu mobile">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html">Sur mesure</a></li>
+            <li><a href="index.html#realisations">Projets réalisés</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        <p class="site-header__mobile-menu__tagline">
+          Chaque projet est étudié avec attention<br />
+          Les délais et tarifs sont définis ensemble.
+        </p>
+      </div>
+      <hr class="site-header__mobile-menu__sep site-header__mobile-menu__sep--bottom" aria-hidden="true" />
+    </div>
+  </header>
+
+
+  <!-- ── CONTENU (rendu par JS) ──────────────────────────── -->
+  <main>
+    <section class="page">
+      <div class="page__inner">
+        <h1 class="page__title">Parlons de votre création</h1>
+        <div id="form-root"></div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="site-footer__social" aria-label="Retrouvez Au fil de Nath sur les réseaux">
+        <a href="https://www.instagram.com/au_fil_de_nath/" target="_blank" rel="noopener">
+          <img src="assets/logo%20insta.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Instagram</span>
+        </a>
+        <a href="https://www.vinted.fr/member/133558715-aufilsdenath?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnB0zWrY0VCp5iScxJnM4wXbTlK7Rzn_t2t8GuV2q97yDfnE0mERHfE2xr-8g_aem_fn0HZ6scnlGo0cQ_6BgeYw" target="_blank" rel="noopener">
+          <img src="assets/Check%20vinted.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Vinted</span>
+        </a>
+      </div>
+      <img class="site-footer__separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+      <div class="site-footer__bottom-row">
+        <a href="index.html" class="site-footer__logo" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20seul%20final.svg" alt="Au fil de Nath" />
+        </a>
+        <button type="button" class="site-footer__top-link" data-back-to-top aria-label="Retour en haut de la page">
+          Retour en haut
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+      <div class="site-footer__bottom">
+        © <span data-footer-year>2026</span> Au fil de Nath — Tous droits réservés.
+        · <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+      </div>
+
+      <!-- 5) Mention créateur -->
+      <div class="site-footer__caryon">
+        <a href="https://caryonstudio.fr" target="_blank" rel="noopener" class="site-footer__caryon-link">
+          <img src="assets/caryon-logo.svg" alt="" aria-hidden="true" />
+          Créé par CARYON →
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+/* ============================================================
+   AU FIL DE NATH — Données produits
+   Utilisé par fiche-produit.html et formulaire-produit.html
+   ============================================================ */
+
+/* Dossier photo principal */
+const P = 'Pages%20figma/fiches%20et%20formulaires%20produits/photos%20produits/';
+
+const PRODUCTS = [
+
+  /* ── Univers bébé ─────────────────────────────────────── */
+
+  {
+    slug: 'turbulette',
+    name: 'Turbulette personnalisable',
+    category: 'bebe',
+    price: '30',
+    sizes: '0–18 mois',
+    photos: [
+      P + 'Turbulette%201.webp',
+      P + 'turbulette%20brod%C3%A9e%202%201.webp',
+    ],
+    description: [
+      'Une pièce douce et rassurante pour accompagner les premiers sommeils. Réalisée en coton OEKO-TEX, cousue main avec attention.',
+      'Le prix final dépend des options choisies (tissu, broderie, taille, pochon…)',
+      'Disponible en plusieurs tailles, la turbulette est confectionnée à la main pour s\'adapter aux saisons et aux besoins de bébé.',
+      'Selon le modèle choisi, elle peut être réalisée :\n— en coton ou en double gaze pour l\'été\n— en molleton\n— avec une polaire appliquée à l\'intérieur pour plus de chaleur',
+      'Adaptée à la saison et confectionnée pour le confort et la sécurité de bébé.',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+      {
+        title: 'Tailles disponibles',
+        items: ['0/3 mois (50 cm) — 30 €', '3/6 mois (60 cm) — 35 €', '6/12 mois (75 cm) — 40 €', '12/18 mois (85 cm) — 45 €'],
+      },
+    ],
+    reassurance: 'Motifs proposés selon disponibilités et saison.',
+  },
+
+  {
+    slug: 'babynest',
+    name: 'Babynest personnalisable',
+    category: 'bebe',
+    price: '60',
+    sizes: null,
+    photos: [
+      P + '569387996_17974343630946309_5089851895889682679_n.%201.webp',
+      P + '552785966_17970778961946309_8562487617140048474_n.%201.webp',
+      P + 'Babynest%20%282%29.webp',
+      P + 'Babynest%20%283%29.webp',
+      P + 'Babynest%20%284%29.webp',
+    ],
+    description: [
+      'Un cocon doux et couvrant pour envelopper bébé et lui assurer la sécurité des premiers jours.',
+      'Le prix final dépend des options choisies (tissu, broderie, motifs, pochon…)',
+      'Le babynest est confectionné avec un tissu cocon qui crée un espace sécurisant et libère les bras. Chaque pièce est réalisée à la commande avec la possibilité d\'ajouter une pochette intérieure amovible.',
+      'Fermeture sécurisée et fixations originales. Modèle bébé uniquement.',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    warning: 'Le babynest doit toujours être utilisé sous surveillance d\'un adulte.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Taille du motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'sac-a-dos-creche',
+    name: 'Sac à dos crèche / maternelle personnalisable',
+    category: 'bebe',
+    price: '30',
+    sizes: null,
+    photos: [
+      P + 'sac%20%C3%A0%20dos%20cr%C3%A8che%206.webp',
+      P + 'sac%20%C3%A0%20dos%20cr%C3%A8che%202%201.webp',
+      P + 'sac%20%C3%A0%20dos%20cr%C3%A8che%203%201.webp',
+      P + 'sac%20%C3%A0%20dos%20cr%C3%A8che%205%201.webp',
+    ],
+    description: [
+      'Un petit sac pratique et personnalisable pour accompagner votre enfant à la crèche ou à la maternelle.',
+      'Personnalisation possible selon vos choix.',
+      'Confectionné avec soin, ce sac à dos idéal pour transporter doudou, goûter ou petit change au quotidien.',
+      'Léger et adapté aux petites épaules, il accompagne les premiers jours et se confectionne à la main pour s\'adapter à votre enfant.',
+      'Chaque modèle est réalisé à la commande et peut être personnalisé avec un prénom ou un motif pour le rendre encore plus unique.',
+      'Taille adaptée aux tout-petits, pensé pour être pratique et résistant au quotidien.',
+      'Fermeture sécurisée et finitions soignées. Modèle bébé unique.',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'protege-carnet-sante',
+    name: 'Protège carnet de santé personnalisable',
+    category: 'bebe',
+    price: '20',
+    sizes: null,
+    photos: [
+      P + '574750256_17975969078946309_2476281317568177951_n.%201.webp',
+      P + '586669161_17977583036946309_1278746929384982568_n.%201.webp',
+    ],
+    description: [
+      'Un protège carnet de santé en tissu, cousu main et entièrement personnalisable.',
+      'Personnalisation possible selon vos choix.',
+      'Pour garder les précieux souvenirs de bébé en beauté tout en protégeant son carnet de santé.',
+      'Réalisé à la commande selon vos couleurs et préférences. Possible avec broderie prénom ou motif.',
+    ],
+    delai: 'Environ 5 à 7 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'doudou-lapin',
+    name: 'Doudou Lapin personnalisable',
+    category: 'bebe',
+    price: '10',
+    priceNote: 'Doudou + pochette : 25 € · Doudou seul : 20 € · Pochette seule : 10 €',
+    sizes: null,
+    photos: [
+      P + 'Doudou%20lapin%201.webp',
+      P + 'Doudou%20lapin%202.webp',
+      P + 'Doudou%20lapin%20%283%29.webp',
+      P + 'Doudou%20lapin%20%285%29.webp',
+      P + 'Doudou%20lapin%20%2812%29.webp',
+    ],
+    description: [
+      'Un doudou tout doux, cousu main, pour accompagner bébé dans ses premiers moments.',
+      'Disponible seul ou avec sa pochette assortie : doudou + pochette 25 €, doudou seul 20 €, pochette seule 10 €.',
+      'Personnalisation possible selon vos choix.',
+      'Réalisé en tissu doux et résistant, il est conçu pour durer et devenir le compagnon préféré de bébé.',
+      'Personnalisable avec le prénom de bébé brodé ou un petit motif de votre choix.',
+    ],
+    delai: 'Environ 5 à 7 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'pochette-a-doudou',
+    name: 'Pochette à doudou personnalisable',
+    category: 'bebe',
+    price: '10',
+    sizes: null,
+    photos: [], /* Pas de photo disponible pour le moment */
+    description: [
+      'Une petite pochette pratique pour protéger et transporter le doudou préféré.',
+      'Personnalisation possible selon vos choix.',
+      'Idéale pour la crèche, l\'école ou les sorties, cette pochette permet de garder le doudou propre et à portée de main.',
+      'Légère et facile à glisser dans un sac, elle accompagne votre enfant au quotidien. Chaque modèle est confectionné à la commande et peut être personnalisé avec un prénom ou un motif pour le rendre encore plus unique.',
+      'Idéal pour garder le doudou propre et toujours à portée de main.',
+      'Finitions soignées.',
+    ],
+    delai: 'Environ 3 à 5 jours ouvrés, selon les options et la charge de travail.',
+    reassurance: 'Pratique pour la crèche et idéale pour toute la famille.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  /* ── Accessoires ──────────────────────────────────────── */
+
+  {
+    slug: 'pochette-cotons-lavables',
+    name: 'Pochette + cotons lavables',
+    category: 'accessoires',
+    price: '15',
+    sizes: null,
+    photos: [
+      P + 'Pochette%20%2B%20coton%209%201.webp',
+      P + 'Pochette%20%2B%20coton%201%201.webp',
+      P + 'Pochette%20%2B%20coton%205%201.webp',
+      P + 'Pochette%20%2B%20coton%206%201.webp',
+    ],
+    description: [
+      'Une pochette zippée accompagnée de ses cotons lavables, pour une routine beauté zéro déchet.',
+      'Personnalisation possible selon vos choix.',
+      'Confectionnée en tissu imperméable à l\'intérieur et en tissu décoratif à l\'extérieur. Les cotons sont en éponge de bambou, doux et lavables en machine.',
+    ],
+    delai: 'Environ 3 à 5 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'serviette-de-tete',
+    name: 'Serviette de tête personnalisable',
+    category: 'accessoires',
+    price: '18',
+    sizes: null,
+    photos: [
+      P + 'Serviette%20de%20t%C3%AAte.webp',
+      P + 'Serviette%20de%20t%C3%AAte%201.webp',
+      P + 'Serviette%20de%20t%C3%AAte%202.webp',
+    ],
+    description: [
+      'Une serviette de tête en tissu éponge, douce et absorbante, personnalisable selon vos envies.',
+      'Pratique pour la sortie du bain, le sport ou la plage. Réalisée à la commande avec broderie possible.',
+    ],
+    delai: 'Environ 3 à 5 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'pochette-soignante',
+    name: 'Pochette soignant',
+    category: 'accessoires',
+    price: '12',
+    sizes: null,
+    photos: [
+      P + '552950121_17970917090946309_2205476163409626417_n.%201.webp',
+      P + 'Pochette%20pour%20soignants%203%201.webp',
+      P + 'Pochette%20pour%20soignants%204%201.webp',
+      P + 'Pochette%20pour%20soignants%205%201.webp',
+      P + 'Pochette%20infiermiere%206.webp',
+      P + 'Pochette%20infiermiere%2011.webp',
+    ],
+    description: [
+      'Une pochette pratique et élégante, pensée pour les soignants et toutes celles qui ont besoin d\'un rangement rapide et accessible.',
+      'Personnalisation possible selon vos choix.',
+      'Réalisée en tissu résistant et facile à nettoyer. Personnalisable avec un prénom ou un motif.',
+    ],
+    delai: 'Environ 3 à 5 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'trousse-agenda',
+    name: 'Trousse agenda personnalisable',
+    category: 'accessoires',
+    price: '10',
+    sizes: null,
+    photos: [
+      P + 'Trousse%20agenda%20%281%29.webp',
+      P + 'Trousse%20agenda%201.webp',
+      P + 'Trousse%20agenda%20%288%29.webp',
+      P + 'Trousse%20agenda%20%285%29.webp',
+    ],
+    description: [
+      'Une trousse fine et élégante, pensée pour glisser stylos, crayons et petits accessoires dans votre agenda ou sac.',
+      'Personnalisation possible selon vos choix.',
+      'Réalisée en tissu décoratif, fermeture zippée, personnalisable selon vos couleurs et envies.',
+    ],
+    delai: 'Environ 3 à 5 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'marque-page',
+    name: 'Marque-page personnalisable',
+    category: 'accessoires',
+    price: '5',
+    priceNote: 'Marque-page tissu : 5 € · Marque-page magnétique : 8 €',
+    sizes: null,
+    photos: [
+      P + 'Marque%20page%203%201.webp',
+      P + 'Marque%20page%201%201.webp',
+    ],
+    description: [
+      'Une touche douce et élégante pour accompagner vos lectures.',
+      'Personnalisation possible selon vos choix.',
+      'Un marque-page en tissu cousu main, pour les amoureux des livres. Simple, original et pratique.',
+      'Personnalisable avec un prénom brodé ou un petit motif. Idéal en cadeau.',
+      'Idéal pour la crèche et idéale pour toutes les grandes lectrices.',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'essuie-tout-lavable',
+    name: 'Essuie-tout lavable — 8 feuilles',
+    category: 'accessoires',
+    price: '25',
+    sizes: null,
+    photos: [
+      P + 'Essuie%20tout%20(3).webp',
+      P + 'Essuie%20tout%20(1).webp',
+      P + 'Essuie%20tout%20(2).webp',
+      P + 'Essuie%20tout%20(4).webp',
+      P + 'Essuie%20tout%20(5).webp',
+      P + 'Essuie%20tout%20(6).webp',
+    ],
+    description: [
+      'Un lot de 8 feuilles d\'essuie-tout lavables en tissu, pour remplacer le papier au quotidien.',
+      'En tissu éponge d\'un côté, tissu imprimé de l\'autre. Lavable en machine à 60°C. Vendus avec une pochette de rangement.',
+    ],
+    delai: 'Environ 5 à 7 jours ouvrés, selon la charge de travail.',
+    options: [
+      {
+        title: 'Broderie motif (pochette)',
+        items: ['Petit (3 €)', 'Moyen (10 €)'],
+      },
+    ],
+  },
+
+  /* ── Sacs & maroquinerie ──────────────────────────────── */
+
+  {
+    slug: 'sac-weekend',
+    name: 'Sac Weekend personnalisable',
+    category: 'sacs',
+    price: '35',
+    sizes: null,
+    photos: [
+      P + 'georges%205%201.webp',
+      P + 'georges%203%201.webp',
+      P + 'georges%204%201.webp',
+      P + 'georges%202%201.webp',
+    ],
+    description: [
+      'Le sac Georges : un sac cabas élégant et pratique, cousu main dans un tissu robuste.',
+      'Il permet de garder l\'essentiel à portée de main tout en restant sobre et élégant.',
+      'Elle est personnalisable à la commande et peut être entièrement adaptée selon vos envies (tissu, couleurs, broderie).',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'banane',
+    name: 'Banane personnalisable',
+    category: 'sacs',
+    price: '19',
+    priceNote: 'Mini banane : 19 € · Banane classique : 29 € · Banane rectangulaire : 29 €',
+    sizes: null,
+    photos: [
+      P + 'Bananes%20livr%C3%A9es%20pour%20No%C3%ABl%20%F0%9F%8E%85%201.webp',
+      P + 'Banane%202%201.webp',
+      P + 'Bananes%20livr%C3%A9es%20pour%20No%C3%ABl%20%F0%9F%8E%85%20%284%29%201.webp',
+      P + 'Sac%20banane%201.webp',
+      P + 'Banane%20(1).webp',
+      P + 'Banane%20(6).webp',
+    ],
+    description: [
+      'La banane en tissu : la sacoche en bandoulière à la fois tendance et pratique à porter en toute liberté.',
+      'À partir de 29 € — et +5 € avec une poche zippée supplémentaire.',
+      'Pratique et moderne, la banane se porte en bandoulière ou à la taille. Elle est munie d\'une poche principale zippée pour garder vos affaires en sécurité tout en restant proche de votre corps.',
+      'Élégante et compacte, la commande est entièrement adaptée à votre projet et peut être entièrement personnalisée par broderie.',
+      'Pratique, confortable et adaptée à une usage quotidien.',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'housse-pc',
+    name: 'Housse pour PC personnalisable',
+    category: 'sacs',
+    price: '30',
+    sizes: null,
+    photos: [
+      P + 'ordi%204.webp',
+      P + 'ordi%202%201.webp',
+      P + 'ordi%203%201.webp',
+    ],
+    description: [
+      'Une housse pour ordinateur portable, cousue main dans un tissu rembourré pour protéger votre matériel.',
+      'Disponible pour différentes tailles d\'ordinateur. Personnalisable selon vos couleurs et envies.',
+    ],
+    delai: 'Environ 7 à 10 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+      {
+        title: 'Broderie motif',
+        items: ['Petit (3 €)', 'Moyen (10 €)', 'Grand (15 €)'],
+      },
+    ],
+  },
+
+  /* ── Nouveaux produits ─────────────────────────────────── */
+
+  {
+    slug: 'sac-a-langer',
+    name: 'Sac à langer & tapis nomade',
+    category: 'bebe',
+    price: '100',
+    priceNote: '100 € l\'ensemble · 40 € le tapis seul',
+    photos: [
+      P + 'Sac%20a%20langer.webp',
+      P + 'Sac%20a%20langer%202.webp',
+      P + 'Sac%20a%20langer%20(1).webp',
+      P + 'Sac%20a%20langer%20(2).webp',
+      P + 'Sac%20a%20langer%20(3).webp',
+      P + 'Sac%20a%20langer%20(4).webp',
+      P + 'Sac%20a%20langer%20(5).webp',
+      P + 'Sac%20a%20langer%20(6).webp',
+      P + 'Tapis%20a%20langer.webp',
+      P + 'Tapis%20a%20langer%201.webp',
+      P + 'Tapis%20a%20langer%202.webp',
+      P + 'Tapis%20a%20langer%20(2).webp',
+      P + 'Tapis%20a%20langer%20(4).webp',
+    ],
+    description: [
+      'Un ensemble pensé pour accompagner les sorties du quotidien avec bébé, en alliant praticité, confort et fabrication artisanale.',
+      'Ce sac à langer a été imaginé pour permettre aux parents de garder l\'essentiel à portée de main lors des déplacements.',
+    ],
+    features: ['Fabrication artisanale', 'Tapis nomade assorti', 'Matières douces'],
+    care: 'Lavage délicat recommandé. Séchage à l\'air libre.',
+    delai: 'Environ 10 à 14 jours ouvrés, selon les options et la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom (tapis)',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'bavoir-maternelle',
+    name: 'Bavoir de maternelle personnalisé',
+    category: 'bebe',
+    price: '10',
+    photos: [
+      P + 'bavoir%20de%20maternelle.webp',
+      P + 'bavoir%20de%20maternelle%20(1).webp',
+      P + 'bavoir%20de%20maternelle%20(2).webp',
+    ],
+    description: [
+      'Bavoir élastiqué confectionné à la main, avec partie absorbante et broderie prénom.',
+    ],
+    features: ['Enfilage facile', 'Tissu absorbant', 'Personnalisation prénom'],
+    care: 'Lavable en machine.',
+    delai: 'Environ 3 à 5 jours ouvrés, selon la charge de travail.',
+    options: [
+      {
+        title: 'Broderie prénom',
+        items: ['1 € / lettre (1–3 cm)', '1,50 € / lettre (3–6 cm)', '2 € / lettre (6–10 cm)'],
+      },
+    ],
+  },
+
+  {
+    slug: 'mugbag',
+    name: 'Mugbag',
+    category: 'accessoires',
+    price: '20',
+    photos: [
+      P + 'Mugbag%202.webp',
+      P + 'Mugbag%201.webp',
+      P + 'Mugbag%20(1).webp',
+      P + 'Mugbag%20(2).webp',
+      P + 'Mugbag%20(3).webp',
+      P + 'Mugbag%20(4).webp',
+      P + 'Mugbag%20(5).webp',
+    ],
+    description: [
+      'La petite pause thé ou café à emporter partout, dans un format compact et élégant.',
+    ],
+    features: ['Compact', 'Fermeture pratique', 'Idée cadeau'],
+    care: 'Lavage délicat recommandé.',
+    delai: 'Environ 3 à 5 jours ouvrés, selon la charge de travail.',
+    options: [
+      {
+        title: 'Personnalisation',
+        items: ['Différents tissus et coloris selon les stocks disponibles.'],
+      },
+    ],
+  },
+
+  {
+    slug: 'pochette-a-livre',
+    name: 'Pochette à livre',
+    category: 'accessoires',
+    price: '15',
+    photos: [
+      P + 'pochette%20%C3%A0%20livre%20(1).webp',
+      P + 'pochette%20%C3%A0%20livre%20(2).webp',
+    ],
+    description: [
+      'Pochette douce pour transporter et protéger vos livres.',
+    ],
+    features: ['Protège les couvertures', 'Légère', 'Fabrication artisanale'],
+    care: 'Lavage délicat recommandé.',
+    delai: 'Environ 3 à 5 jours ouvrés, selon la charge de travail.',
+    options: [
+      {
+        title: 'Personnalisation',
+        items: ['Choix de tissus et motifs selon les disponibilités de l\'atelier.'],
+      },
+    ],
+  },
+
+  {
+    slug: 'trousse-de-toilette',
+    name: 'Trousse de toilette',
+    category: 'accessoires',
+    price: '40',
+    photos: [
+      P + 'Trousse%20de%20toilette%20(6).webp',
+      P + 'trousse%20de%20toilette%20(2).webp',
+      P + 'Trousse%20de%20toilette%20(4).webp',
+      P + 'Trousse%20de%20toilette%20(5).webp',
+    ],
+    description: [
+      'Trousse de toilette confectionnée à la main, idéale pour les voyages.',
+    ],
+    features: ['Grande capacité', 'Finitions soignées', 'Fabrication artisanale'],
+    care: 'Lavage délicat recommandé.',
+    delai: 'Environ 5 à 7 jours ouvrés, selon la charge de travail.',
+    options: [
+      {
+        title: 'Personnalisation',
+        items: ['Tissus adaptables selon les disponibilités de l\'atelier.'],
+      },
+    ],
+  },
+
+];
+
+/* ── Helpers ──────────────────────────────────────────── */
+
+function getProductBySlug(slug) {
+  return PRODUCTS.find(p => p.slug === slug) || null;
+}
+
+/* Renvoie la première photo dispo, ou null si aucune */
+function getProductThumb(product) {
+  return (product.photos && product.photos.length > 0) ? product.photos[0] : null;
+}
+
+</script>
+  <script src="header.js"></script>
+  <script>
+    /* ── Rendu du formulaire produit ────────────────────── */
+
+    function renderTarifsGrid(options) {
+      if (!options || !options.length) return '';
+      const cols = options.map(opt => `
+        <div>
+          <strong>${opt.title}</strong>
+          ${opt.items.map(i => `• ${i}`).join('<br>')}
+        </div>`).join('');
+      const colCount = Math.min(options.length, 3);
+      return `
+        <div class="form__tarifs">
+          <h3 class="form__tarifs-title">Tarifs indicatifs</h3>
+          <div class="form__tarifs-grid" style="grid-template-columns: repeat(${colCount}, 1fr);">
+            ${cols}
+          </div>
+          <p class="form__tarifs-note">Motifs proposés selon disponibilités et saison.</p>
+        </div>`;
+    }
+
+    function renderForm(p) {
+      const root = document.getElementById('form-root');
+      const hasPhoto = p && p.photos && p.photos.length > 0;
+      const thumbSrc = hasPhoto ? p.photos[0] : null;
+
+      root.innerHTML = `
+        <form class="form" id="product-form"
+              action="https://api.web3forms.com/submit"
+              method="POST">
+          <!-- Web3Forms — config -->
+          <input type="hidden" name="access_key" value="e36e63dd-40b0-411a-9d7c-08d9ce3f7f79" />
+          <input type="hidden" name="subject" value="Nouvelle demande — ${p ? p.name : 'Création personnalisée'}" />
+          <input type="hidden" name="from_name" value="Au fil de Nath" />
+          <input type="hidden" name="produit" value="${p ? p.name + ' (' + p.slug + ')' : ''}" />
+
+          <!-- Aperçu produit -->
+          <div class="form__product-preview">
+            <p class="form__product-intro">
+              Vous êtes intéressé·e par la <strong>${p ? p.name : 'création personnalisable'}</strong>
+            </p>
+            ${thumbSrc
+              ? `<img src="${thumbSrc}" alt="${p.name}" class="form__product-thumb" />`
+              : `<div class="form__product-thumb form__product-thumb--placeholder" aria-hidden="true"></div>`
+            }
+            <p class="form__product-price">À partir de ${p ? p.price : '?'}&nbsp;€</p>
+          </div>
+
+          <!-- Prénom -->
+          <div class="form__group">
+            <label class="form__label" for="prenom">Votre prénom</label>
+            <input type="text" id="prenom" name="prenom" class="form__input"
+              placeholder="Comment puis-je vous appeler ?" />
+            <p class="form__error" id="error-prenom">J'ai juste besoin de votre prénom pour savoir comment vous appeler</p>
+          </div>
+
+          <!-- Email -->
+          <div class="form__group">
+            <label class="form__label" for="email">Votre email</label>
+            <input type="email" id="email" name="email" class="form__input"
+              placeholder="Votre email pour que je puisse vous répondre" />
+            <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
+          </div>
+
+          <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin: 24px 0;" />
+
+          <!-- Description libre -->
+          <div class="form__group">
+            <label class="form__label" for="description">Votre idée en quelques mots</label>
+            <textarea id="description" name="description" class="form__textarea"
+              placeholder="Décrivez votre idée (prénom, couleurs, occasion, délai…)" rows="5"></textarea>
+            <p class="form__example">
+              <strong>Exemples :</strong>
+              Prénom : Léa<br>
+              Couleur : beige et terracotta<br>
+              Tissu : sac crèche<br>
+              Délai souhaité : fin avril
+            </p>
+            <p class="form__emphasis">
+              Plus votre description est précise,<br />
+              plus ma proposition sera fidèle à vos attentes.
+            </p>
+          </div>
+
+          <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" style="margin: 24px 0;" />
+
+          <!-- Type de broderie — custom select -->
+          <div class="form__group form__group--inline">
+            <label class="form__label" id="broderie-label">Type de broderie&nbsp;:</label>
+            <div class="custom-select" id="broderie-wrapper" role="combobox" aria-labelledby="broderie-label">
+              <button type="button" class="custom-select__trigger"
+                      aria-expanded="false" aria-haspopup="listbox" aria-controls="broderie-list">
+                <span class="custom-select__label">Sélectionnez un type de broderie</span>
+                <svg class="custom-select__arrow" viewBox="0 0 24 24" width="18" height="18"
+                     fill="none" stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <ul class="custom-select__list" id="broderie-list" role="listbox" hidden>
+                <li class="custom-select__option" data-value="prenom"       role="option">Broderie prénom</li>
+                <li class="custom-select__option" data-value="motif"        role="option">Broderie motif</li>
+                <li class="custom-select__option" data-value="prenom-motif" role="option">Prénom + motif</li>
+                <li class="custom-select__option" data-value="aucune"       role="option">Pas de broderie</li>
+              </ul>
+              <input type="hidden" name="broderie" id="broderie" value="">
+            </div>
+            <p class="form__hint">Vous pouvez préciser les détails après sélection.</p>
+          </div>
+
+          <!-- Texte à broder -->
+          <div class="form__group" id="texte-group">
+            <label class="form__label" for="texte-broder">Texte à broder</label>
+            <input type="text" id="texte-broder" name="texte-broder" class="form__input"
+              placeholder="Prénom à broder" />
+            <p class="form__error" id="error-texte-broder">Le prénom à broder est nécessaire pour personnaliser votre création</p>
+            <p class="form__hint">À remplir uniquement si une broderie est sélectionnée.</p>
+          </div>
+
+          <!-- Tarifs indicatifs -->
+          ${p ? renderTarifsGrid(p.options) : ''}
+
+          <!-- Submit -->
+          <div class="form__submit-wrap">
+            <button type="submit" class="btn btn--gradient form__submit">
+              Lancer ma demande personnalisée
+            </button>
+            <p class="form__footnote">
+              Je vous réponds sous 24 à 48&nbsp;h avec une proposition personnalisée.<br>
+              Aucun paiement n'est effectué avant validation commune.
+            </p>
+          </div>
+        </form>`;
+
+      /* ── Custom select "Type de broderie" ── */
+      const wrapper = document.getElementById('broderie-wrapper');
+      if (wrapper) {
+        const trigger = wrapper.querySelector('.custom-select__trigger');
+        const list    = wrapper.querySelector('.custom-select__list');
+        const labelEl = wrapper.querySelector('.custom-select__label');
+        const hidden  = document.getElementById('broderie');
+        const options = wrapper.querySelectorAll('.custom-select__option');
+        const texteGroup = document.getElementById('texte-group');
+
+        /* Le texte à broder n'est visible que si une broderie est choisie */
+        function syncTexteGroup(value) {
+          if (!texteGroup) return;
+          const needsText = value === 'prenom' || value === 'motif' || value === 'prenom-motif';
+          texteGroup.style.display = needsText ? '' : 'none';
+        }
+        syncTexteGroup('');
+
+        function openList(open) {
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (open) { list.hidden = false; } else { list.hidden = true; }
+        }
+
+        trigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          openList(trigger.getAttribute('aria-expanded') !== 'true');
+        });
+
+        options.forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            options.forEach(function (o) { o.classList.remove('is-selected'); });
+            opt.classList.add('is-selected');
+            labelEl.textContent = opt.textContent;
+            hidden.value = opt.dataset.value;
+            syncTexteGroup(opt.dataset.value);
+            setError('texte-broder', 'error-texte-broder', false);
+            openList(false);
+          });
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!wrapper.contains(e.target)) openList(false);
+        });
+      }
+
+      /* ── Validation ── */
+      function setError(fieldId, errorId, show) {
+        const field = document.getElementById(fieldId);
+        const msg   = document.getElementById(errorId);
+        if (!field || !msg) return;
+        if (show) {
+          field.classList.add('is-invalid');
+          msg.classList.add('is-visible');
+        } else {
+          field.classList.remove('is-invalid');
+          msg.classList.remove('is-visible');
+        }
+      }
+
+      ['prenom', 'email', 'texte-broder'].forEach(function (id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('input', function () {
+          setError(id, 'error-' + id, false);
+        });
+      });
+
+      const formEl = document.getElementById('product-form');
+      if (formEl) {
+        formEl.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const prenom = (document.getElementById('prenom') || {}).value || '';
+          const email  = (document.getElementById('email')  || {}).value || '';
+          const broderie = (document.getElementById('broderie') || {}).value || '';
+          const texte  = (document.getElementById('texte-broder') || {}).value || '';
+          const needsText = broderie === 'prenom' || broderie === 'motif' || broderie === 'prenom-motif';
+
+          setError('prenom', 'error-prenom', !prenom.trim());
+          setError('email',  'error-email',  !email.trim());
+          setError('texte-broder', 'error-texte-broder', needsText && !texte.trim());
+
+          if (!prenom.trim() || !email.trim() || (needsText && !texte.trim())) {
+            const first = formEl.querySelector('.is-invalid');
+            if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+
+          try {
+            const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(formEl) });
+            const data = await res.json();
+            window.location.href = data.success ? 'merci.html' : 'echec.html';
+          } catch (err) {
+            window.location.href = 'echec.html';
+          }
+        });
+      }
+    }
+
+    /* ── Init ── */
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const slug   = params.get('p');
+      const product = getProductBySlug(slug);
+
+      /* Aucun produit valide dans l'URL → on tente de retrouver le bon formulaire,
+         sinon on renvoie vers la boutique pour choisir une création. */
+      if (!product) {
+        /* 1) Récupérer le slug depuis la page précédente (fiche ou formulaire produit) */
+        const ref = document.referrer || '';
+        const m = ref.match(/[?&]p=([^&#]+)/);
+        const refSlug = m ? decodeURIComponent(m[1]) : null;
+        if (refSlug && getProductBySlug(refSlug)) {
+          window.location.replace('formulaire-produit.html?p=' + encodeURIComponent(refSlug));
+          return;
+        }
+        /* 2) Sinon, retour à la boutique */
+        window.location.replace('boutique.html');
+        return;
+      }
+
+      renderForm(product);
+
+      /* Lien retour → fiche produit concernée */
+      const backLink = document.getElementById('form-back-link');
+      if (backLink) {
+        backLink.href = slug ? ('fiche-produit.html?p=' + encodeURIComponent(slug)) : 'boutique.html';
+      }
+
+      /* Titre de page */
+      if (product) document.title = 'Demande — ' + product.name + ' — Au fil de Nath';
+    });
+  </script>
+
+</body>
+</html>

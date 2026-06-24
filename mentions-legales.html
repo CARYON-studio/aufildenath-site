@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions légales — Au fil de Nath</title>
+  <!-- Open Graph / partage réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Au fil de Nath" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Mentions légales — Au fil de Nath" />
+  <meta property="og:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta property="og:url" content="https://aufildenath.fr/mentions-legales.html" />
+  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mentions légales — Au fil de Nath" />
+  <meta name="twitter:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="pages.css" />
+
+  <style>
+    /* ── Page mentions légales ── */
+    .legal__intro {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--color-marine);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto 56px;
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    .legal__section {
+      margin-bottom: 56px;
+    }
+
+    .legal__section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 500;
+      color: var(--color-marine);
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--color-rose);
+    }
+
+    .legal__block {
+      margin-bottom: 28px;
+    }
+
+    .legal__block-title {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-marine);
+      opacity: 0.55;
+      margin: 0 0 8px;
+    }
+
+    .legal__text {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--color-marine);
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .legal__text + .legal__text {
+      margin-top: 10px;
+    }
+
+    .legal__list {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--color-marine);
+      line-height: 2;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .legal__list li::before {
+      content: "—";
+      margin-right: 10px;
+      opacity: 0.4;
+    }
+
+    .legal__highlight {
+      background: linear-gradient(135deg, rgba(242, 214, 220, 0.18) 0%, rgba(227, 221, 240, 0.18) 100%);
+      border-left: 3px solid var(--color-violet);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .legal__highlight .legal__text {
+      font-size: 14px;
+    }
+
+    /* ⚠ À compléter avant mise en ligne */
+    .legal__todo {
+      background: rgba(242, 214, 220, 0.25);
+      border: 1px dashed rgba(242, 214, 220, 0.8);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-marine);
+      opacity: 0.8;
+    }
+
+    .legal__todo::before {
+      content: "⚠ À vérifier avant mise en ligne : ";
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .legal__link {
+      color: var(--color-marine);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--color-rose);
+    }
+
+    .legal__link:hover {
+      text-decoration-color: var(--color-marine);
+    }
+
+    /* Séparateurs avec respiration verticale */
+    .page__inner .section-separator {
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+
+    .legal__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .legal__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-wrapper">
+
+  <header class="site-header site-header--inner" id="site-header">
+    <div class="site-header__nav-bar">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-sticky"><img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="220" height="80" /></a>
+        <nav class="site-header__nav">
+          <ul class="site-header__nav-list">
+            <li><a href="index.html" class="site-header__nav-link">Accueil</a></li>
+            <li><a href="boutique.html" class="site-header__nav-link">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html" class="site-header__nav-link">Sur mesure</a></li>
+            <li><a href="index.html#realisations" class="site-header__nav-link">Projets réalisés</a></li>
+            <li><a href="index.html#contact" class="site-header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient site-header__cta-sticky">Parler de mon projet</a>
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="site-header__logo-block">
+      <div class="site-header__inner">
+        <a href="index.html" class="back-link">← Retour</a>
+        <a href="index.html" class="site-header__logo-hero"><img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="380" height="138" /></a>
+      </div>
+    </div>
+    <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <hr class="site-header__mobile-menu__sep" aria-hidden="true" />
+      <div class="site-header__mobile-menu__inner">
+        <nav aria-label="Menu mobile">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html">Sur mesure</a></li>
+            <li><a href="index.html#realisations">Projets réalisés</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        <p class="site-header__mobile-menu__tagline">Chaque projet est étudié avec attention<br />Les délais et tarifs sont définis ensemble.</p>
+      </div>
+      <hr class="site-header__mobile-menu__sep site-header__mobile-menu__sep--bottom" aria-hidden="true" />
+    </div>
+  </header>
+
+
+  <main>
+    <section class="page">
+      <div class="page__inner" style="max-width: 780px;">
+
+        <h1 class="page__title">Mentions légales</h1>
+
+        <p class="legal__intro">
+          Ce site est édité par une créatrice artisanale indépendante.
+          Vous trouverez ici toutes les informations légales relatives au site
+          <strong>aufildenath.fr</strong> ainsi que la façon dont sont traitées
+          vos données personnelles.
+        </p>
+
+        <!-- ── 1. ÉDITEUR ─────────────────────────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Éditeur du site</h2>
+
+          <div class="legal__grid">
+            <div class="legal__block">
+              <p class="legal__block-title">Nom commercial</p>
+              <p class="legal__text">Au fil de Nath</p>
+            </div>
+            <div class="legal__block">
+              <p class="legal__block-title">Responsable & Directrice de publication</p>
+              <p class="legal__text">Nathalie Pancher</p>
+            </div>
+            <div class="legal__block">
+              <p class="legal__block-title">Statut juridique</p>
+              <p class="legal__text">Micro-entreprise</p>
+            </div>
+            <div class="legal__block">
+              <p class="legal__block-title">SIREN / SIRET</p>
+              <p class="legal__text">930 668 975 / 930 668 975 00012</p>
+            </div>
+            <div class="legal__block">
+              <p class="legal__block-title">Adresse</p>
+              <p class="legal__text">19 rue Basse<br />72300 Parcé-sur-Sarthe<br />France</p>
+            </div>
+            <div class="legal__block">
+              <p class="legal__block-title">Contact</p>
+              <p class="legal__text">
+                <a href="mailto:nathalie.pancher72@gmail.com" class="legal__link">nathalie.pancher72@gmail.com</a><br />
+                06 33 05 64 69
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+        <!-- ── 2. HÉBERGEMENT ──────────────────────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Hébergement</h2>
+
+          <div class="legal__block">
+            <p class="legal__text">
+              Ce site est hébergé par <strong>Cloudflare, Inc.</strong><br />
+              101 Townsend Street, San Francisco, CA 94107 — États-Unis<br />
+              <a href="https://www.cloudflare.com" target="_blank" rel="noopener" class="legal__link">www.cloudflare.com</a>
+            </p>
+          </div>
+        </div>
+
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+        <!-- ── 3. PROPRIÉTÉ INTELLECTUELLE ────────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Propriété intellectuelle</h2>
+
+          <p class="legal__text">
+            L'ensemble des contenus présents sur ce site — textes, photographies, visuels,
+            illustrations et design — est protégé par le droit d'auteur français.
+          </p>
+          <p class="legal__text" style="margin-top: 12px;">
+            Les photographies des créations sont la propriété exclusive de Nathalie Pancher.
+            Certains visuels ou illustrations ont été produits à l'aide d'outils
+            d'intelligence artificielle, puis adaptés et intégrés dans le cadre de la
+            communication du site.
+          </p>
+          <p class="legal__text" style="margin-top: 12px;">
+            Toute reproduction, même partielle, de ces contenus est interdite sans
+            autorisation préalable écrite.
+          </p>
+        </div>
+
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+        <!-- ── 4. POLITIQUE DE CONFIDENTIALITÉ ─────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Politique de confidentialité</h2>
+
+          <!-- Données collectées -->
+          <div class="legal__block">
+            <p class="legal__block-title">Données collectées</p>
+            <p class="legal__text">Ce site collecte des données uniquement via ses formulaires de contact :</p>
+
+            <div class="legal__highlight" style="margin-top: 14px;">
+              <p class="legal__text"><strong>Formulaire de contact :</strong></p>
+              <ul class="legal__list" style="margin-top: 6px;">
+                <li>Prénom</li>
+                <li>Adresse email</li>
+                <li>Message</li>
+              </ul>
+            </div>
+
+            <div class="legal__highlight">
+              <p class="legal__text"><strong>Formulaire de demande sur mesure :</strong></p>
+              <ul class="legal__list" style="margin-top: 6px;">
+                <li>Prénom</li>
+                <li>Adresse email</li>
+                <li>Description du projet</li>
+                <li>Informations relatives à la personnalisation souhaitée</li>
+                <li>Contraintes ou besoins exprimés</li>
+              </ul>
+            </div>
+
+            <p class="legal__text" style="margin-top: 14px;">
+              Aucune autre donnée n'est collectée. Aucun compte utilisateur n'est créé.
+            </p>
+          </div>
+
+          <!-- Finalité -->
+          <div class="legal__block">
+            <p class="legal__block-title">Finalité du traitement</p>
+            <p class="legal__text">
+              Les données sont utilisées exclusivement pour répondre à votre demande de contact
+              ou de création sur mesure. Elles ne sont transmises à aucun tiers, et n'ont aucune
+              finalité commerciale, publicitaire ou marketing.
+            </p>
+          </div>
+
+          <!-- Base légale -->
+          <div class="legal__block">
+            <p class="legal__block-title">Base légale (RGPD)</p>
+            <p class="legal__text">
+              Le traitement repose sur votre <strong>consentement</strong> au moment de la soumission
+              du formulaire (art. 6.1.a du RGPD), ainsi que sur l'<strong>intérêt légitime</strong>
+              de répondre aux demandes entrantes (art. 6.1.f).
+            </p>
+          </div>
+
+          <!-- Conservation -->
+          <div class="legal__block">
+            <p class="legal__block-title">Durée de conservation</p>
+            <p class="legal__text">
+              Les données sont conservées pendant une durée maximale de <strong>3 ans</strong>
+              après le dernier échange, puis supprimées.
+            </p>
+          </div>
+
+          <!-- Destinataires -->
+          <div class="legal__block">
+            <p class="legal__block-title">Destinataires des données</p>
+            <p class="legal__text">
+              Les données sont reçues et traitées exclusivement par Nathalie Pancher.
+              Les formulaires utilisent le service <strong>Web3Forms</strong>, qui transmet
+              les messages par email vers une adresse Gmail. Ce service ne stocke pas vos données
+              à long terme.
+            </p>
+          </div>
+        </div>
+
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+        <!-- ── 5. COOKIES & ANALYTICS ──────────────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Cookies &amp; analytics</h2>
+
+          <div class="legal__block">
+            <p class="legal__block-title">Aucun cookie</p>
+            <p class="legal__text">
+              Ce site ne dépose aucun cookie sur votre appareil, qu'il soit
+              publicitaire, analytique ou fonctionnel. Aucun bandeau de consentement
+              n'est donc nécessaire pour le consulter.
+            </p>
+            <p class="legal__text" style="margin-top: 10px;">
+              Il n'utilise ni Google Analytics, ni pixel Facebook, ni aucun outil
+              de tracking marketing ou publicitaire. Aucune régie publicitaire n'est
+              intégrée.
+            </p>
+          </div>
+
+          <div class="legal__block">
+            <p class="legal__block-title">Plausible Analytics</p>
+            <p class="legal__text">
+              Ce site utilise <strong>Plausible Analytics</strong>, un outil d'analyse
+              d'audience respectueux de la vie privée. Plausible ne dépose aucun cookie
+              sur votre appareil et ne collecte aucune donnée personnelle identifiable.
+              Les statistiques produites sont entièrement anonymes et agrégées.
+            </p>
+            <p class="legal__text" style="margin-top: 10px;">
+              En savoir plus : <a href="https://plausible.io/privacy" target="_blank" rel="noopener" class="legal__link">plausible.io/privacy</a>
+            </p>
+          </div>
+        </div>
+
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+        <!-- ── 6. VOS DROITS RGPD ─────────────────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Vos droits</h2>
+
+          <p class="legal__text" style="margin-bottom: 16px;">
+            Conformément au Règlement Général sur la Protection des Données (RGPD),
+            vous disposez des droits suivants concernant vos données personnelles :
+          </p>
+
+          <ul class="legal__list" style="margin-bottom: 20px;">
+            <li>Droit d'accès à vos données</li>
+            <li>Droit de rectification</li>
+            <li>Droit à l'effacement (« droit à l'oubli »)</li>
+            <li>Droit d'opposition au traitement</li>
+            <li>Droit à la portabilité de vos données</li>
+            <li>Droit de retirer votre consentement à tout moment</li>
+          </ul>
+
+          <div class="legal__highlight">
+            <p class="legal__text">
+              Pour exercer vos droits, contactez Nathalie Pancher par email :<br />
+              <a href="mailto:nathalie.pancher72@gmail.com" class="legal__link">nathalie.pancher72@gmail.com</a>
+            </p>
+          </div>
+
+          <p class="legal__text" style="margin-top: 16px;">
+            En cas de réclamation non résolue, vous avez le droit de saisir la
+            <a href="https://www.cnil.fr" target="_blank" rel="noopener" class="legal__link">CNIL</a>
+            (Commission Nationale de l'Informatique et des Libertés).
+          </p>
+        </div>
+
+        <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+        <!-- ── 7. RÉSEAUX SOCIAUX ─────────────────────── -->
+        <div class="legal__section">
+          <h2 class="legal__section-title">Réseaux sociaux</h2>
+
+          <p class="legal__text" style="margin-bottom: 14px;">
+            Au fil de Nath est présente sur les réseaux sociaux suivants. En cliquant
+            sur ces liens, vous quittez ce site et êtes soumis aux conditions d'utilisation
+            de ces plateformes tierces.
+          </p>
+
+          <ul class="legal__list">
+            <li>
+              Instagram :
+              <a href="https://www.instagram.com/au_fil_de_nath/" target="_blank" rel="noopener" class="legal__link">
+                @au_fil_de_nath
+              </a>
+            </li>
+            <li>
+              Vinted :
+              <a href="https://www.vinted.fr/member/133558715-aufilsdenath" target="_blank" rel="noopener" class="legal__link">
+                aufilsdenath
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── NOTE MISE EN LIGNE ─────────────────────── -->
+        <div class="legal__todo">
+          Vérifier que le nom de domaine aufildenath.fr est bien actif et que l'hébergeur Cloudflare Pages est confirmé avant mise en ligne.
+        </div>
+
+        <p class="legal__text" style="margin-top: 40px; opacity: 0.5; font-size: 13px; text-align: center;">
+          Dernière mise à jour : juin 2026
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__social" aria-label="Retrouvez Au fil de Nath sur les réseaux">
+        <a href="https://www.instagram.com/au_fil_de_nath/" target="_blank" rel="noopener">
+          <img src="assets/logo%20insta.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Instagram</span>
+        </a>
+        <a href="https://www.vinted.fr/member/133558715-aufilsdenath?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnB0zWrY0VCp5iScxJnM4wXbTlK7Rzn_t2t8GuV2q97yDfnE0mERHfE2xr-8g_aem_fn0HZ6scnlGo0cQ_6BgeYw" target="_blank" rel="noopener">
+          <img src="assets/Check%20vinted.svg" alt="" aria-hidden="true" />
+          <span class="site-footer__social-label">Vinted</span>
+        </a>
+      </div>
+
+      <img class="site-footer__separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true" />
+
+      <div class="site-footer__bottom-row">
+        <a href="index.html" class="site-footer__logo" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20seul%20final.svg" alt="Au fil de Nath" />
+        </a>
+        <button type="button" class="site-footer__top-link" data-back-to-top aria-label="Retour en haut de la page">
+          Retour en haut
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="site-footer__bottom">
+        © <span data-footer-year>2026</span> Au fil de Nath — Tous droits réservés.
+        · <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+      </div>
+
+      <!-- 5) Mention créateur -->
+      <div class="site-footer__caryon">
+        <a href="https://caryonstudio.fr" target="_blank" rel="noopener" class="site-footer__caryon-link">
+          <img src="assets/caryon-logo.svg" alt="" aria-hidden="true" />
+          Créé par CARYON →
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mise à jour année footer
+    const yearEl = document.querySelector('[data-footer-year]');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Retour en haut
+    const backToTop = document.querySelector('[data-back-to-top]');
+    if (backToTop) {
+      backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Menu hamburger
+    const hamburger = document.querySelector('.site-header__hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!isOpen));
+        mobileMenu.setAttribute('aria-hidden', String(isOpen));
+        mobileMenu.classList.toggle('is-open', !isOpen);
+      });
+    }
+  </script>
+
+</body>
+</html>
+ 

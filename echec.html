@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'envoi a échoué — Au fil de Nath</title>
+  <!-- Open Graph / partage réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Au fil de Nath" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="L&#x27;envoi a échoué — Au fil de Nath" />
+  <meta property="og:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta property="og:url" content="https://aufildenath.fr/echec.html" />
+  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="L&#x27;envoi a échoué — Au fil de Nath" />
+  <meta name="twitter:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sections.css" />
+
+  <style>
+    .status-wrap {
+      display: flex;
+      flex-direction: column;
+      padding: 32px 0 64px;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .status-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 var(--page-padding-x);
+      gap: 16px;
+    }
+
+    .status__title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: var(--weight-medium);
+      color: var(--color-marine);
+      margin: 0;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .status__text {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: var(--weight-light);
+      color: var(--color-marine);
+      margin: 0;
+      opacity: 0.8;
+      max-width: 440px;
+      line-height: 1.7;
+    }
+
+    .status__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .status-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 12px var(--page-padding-x) 20px;
+      gap: 8px;
+    }
+
+    .status-footer__logo img {
+      width: 52px;
+      height: auto;
+      opacity: 0.85;
+      display: block;
+    }
+
+    .status-footer__legal {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: var(--weight-light);
+      color: var(--color-marine);
+      opacity: 0.5;
+      text-align: right;
+    }
+
+    .status-footer__legal a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 0.5px solid currentColor;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .status-footer__legal a:hover { opacity: 1; }
+
+    .status-footer__caryon { margin-top: 4px; }
+    .status-footer__caryon a {
+      display: inline-flex; align-items: center; gap: 5px;
+      text-decoration: none; color: var(--color-marine);
+      font-family: var(--font-sans); font-size: 10px;
+      font-weight: 300; letter-spacing: 0.3px; opacity: 0.35;
+      transition: opacity 0.2s;
+    }
+    .status-footer__caryon a:hover { opacity: 0.65; }
+    .status-footer__caryon img { display: block; width: 13px; height: 13px; object-fit: contain; }
+
+    @media (max-width: 768px) {
+      .status__text { font-size: 16px; }
+      .status-footer { align-items: center; text-align: center; }
+      .status-footer__legal { text-align: center; }
+    }
+  </style>
+</head>
+
+<body class="page-wrapper">
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="site-header site-header--inner" id="site-header">
+    <div class="site-header__nav-bar">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-sticky" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="220" height="80" />
+        </a>
+        <nav class="site-header__nav" aria-label="Navigation principale">
+          <ul class="site-header__nav-list">
+            <li><a href="index.html" class="site-header__nav-link">Accueil</a></li>
+            <li><a href="boutique.html" class="site-header__nav-link">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html" class="site-header__nav-link">Sur mesure</a></li>
+            <li><a href="index.html#realisations" class="site-header__nav-link">Projets réalisés</a></li>
+            <li><a href="index.html#contact" class="site-header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient site-header__cta-sticky">Parler de mon projet</a>
+        <button class="site-header__hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="site-header__logo-block">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo-hero" aria-label="Au fil de Nath — Accueil">
+          <img src="assets/logo%20sans%20fond.svg" alt="Au fil de Nath" width="380" height="138" />
+        </a>
+      </div>
+    </div>
+
+    <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <hr class="site-header__mobile-menu__sep" aria-hidden="true" />
+      <div class="site-header__mobile-menu__inner">
+        <nav aria-label="Menu mobile">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="parler-de-mon-projet.html">Sur mesure</a></li>
+            <li><a href="index.html#realisations">Projets réalisés</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="parler-de-mon-projet.html" class="btn btn--gradient">Parler de mon projet</a>
+        <p class="site-header__mobile-menu__tagline">Chaque projet est étudié avec attention<br />Les délais et tarifs sont définis ensemble.</p>
+      </div>
+      <hr class="site-header__mobile-menu__sep site-header__mobile-menu__sep--bottom" aria-hidden="true" />
+    </div>
+  </header>
+
+
+  <!-- ── CONTENU ──────────────────────────────────────────── -->
+  <main>
+    <div class="status-wrap">
+
+      <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true"
+           style="margin-top: 0;" />
+
+      <div class="status-body">
+        <h1 class="status__title">L'envoi a échoué</h1>
+        <p class="status__text">Une erreur est survenue et votre message n'a pas pu être transmis. Essayez à nouveau, ou contactez Nath directement par email.</p>
+        <div class="status__actions">
+          <a href="javascript:history.back()" class="btn btn--gradient">Réessayer</a>
+          <a href="mailto:contact@aufildenath.fr" class="btn btn--outline">Envoyer un email</a>
+        </div>
+      </div>
+
+      <img class="section-separator" src="assets/S%C3%A9parateur%20final.svg" alt="" aria-hidden="true"
+           style="margin-bottom: 0;" />
+
+    </div>
+  </main>
+
+
+  <!-- ── PIED DE PAGE MINIMAL ────────────────────────────── -->
+  <footer class="status-footer" role="contentinfo">
+    <a href="index.html" class="status-footer__logo" aria-label="Au fil de Nath — Accueil">
+      <img src="assets/logo%20seul%20final.svg" alt="Au fil de Nath" />
+    </a>
+    <div class="status-footer__legal">
+      © <span data-footer-year>2026</span> Au fil de Nath
+      · <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+    <div class="status-footer__caryon">
+      <a href="https://caryonstudio.fr" target="_blank" rel="noopener">
+        <img src="assets/caryon-logo.svg" alt="" aria-hidden="true" />
+        Créé par CARYON →
+      </a>
+    </div>
+  </footer>
+
+  <script src="header.js"></script>
+  <script>
+    const el = document.querySelector('[data-footer-year]');
+    if (el) el.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

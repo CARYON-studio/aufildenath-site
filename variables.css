@@ -1,0 +1,181 @@
+/* ============================================================
+   AU FIL DE NATH — Design Tokens
+   Source : Figma "Au fil de Nath" (ssXkalTGK3zuSjSh0zyXNi)
+   Extraits le 2026-05-26
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     COULEURS
+  ---------------------------------------------------------- */
+
+  /* Fond & Neutre */
+  --color-ecru:            #FAF8F4;   /* Fond général de toutes les pages */
+  --color-text:            #2B2B2B;   /* Corps de texte principal */
+
+  /* Primaire */
+  --color-marine:          #2F3A44;   /* Bleu profond désaturé — titres, logo, éléments forts */
+  --color-marine-darker:   #1F2A34;   /* Marine -15% brightness — hover du bouton primary */
+
+  /* Ombre marine 12% — utilisée pour les visuels (photo Hero, cartes produit) */
+  --shadow-marine-soft:    0 4px 12px rgba(47, 58, 68, 0.12);
+
+  /* Secondaires — séparateurs & accents */
+  --color-rose:            #F2D6DC;   /* Rose poudré */
+  --color-violet:          #E3DDF0;   /* Violet clair grisé — aussi utilisé pour les boutons */
+  --color-bleu-pastel:     #DDE7F0;   /* Bleu pastel grisé */
+
+  /* Utilitaires */
+  --color-white:           #FFFFFF;
+  --color-transparent:     transparent;
+
+  /* Dégradé pastel — pour le CTA "Parler de mon projet" du menu mobile */
+  --gradient-pastel:       linear-gradient(90deg,
+                             var(--color-violet) 0%,    /* #E3DDF0 */
+                             var(--color-rose) 50%,     /* #F2D6DC */
+                             var(--color-bleu-pastel) 100%   /* #DDE7F0 */
+                           );
+
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHIE — Familles
+  ---------------------------------------------------------- */
+
+  --font-serif:   'Playfair Display', Georgia, serif;
+  --font-sans:    'Source Sans 3', 'Source Sans Pro', sans-serif;
+
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHIE — Tailles (desktop, base 1440px)
+  ---------------------------------------------------------- */
+
+  --text-logo:        60px;   /* "Au fil de Nath" dans le header */
+  --text-tagline:     16px;   /* "Créatrice • Couturière" sous le logo */
+  --text-h1:          52px;   /* Titres de page (ex: "Boutique", "Racontez-moi…") */
+  --text-h2:          32px;   /* Titres de section */
+  --text-body-lg:     17px;   /* Corps de texte standard */
+  --text-body-sm:     14px;   /* Captions, mentions légales, labels formulaire */
+  --text-back:        14px;   /* Lien "← Retour" */
+  --text-btn:         16px;   /* Texte des boutons CTA */
+
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHIE — Graisses
+  ---------------------------------------------------------- */
+
+  --weight-light:     300;    /* Source Sans 3 Light */
+  --weight-regular:   400;    /* Source Sans 3 Regular */
+  --weight-medium:    500;    /* Playfair Display Medium */
+  --weight-semibold:  600;    /* Playfair Display SemiBold */
+
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHIE — Letter-spacing (valeurs Figma exactes)
+  ---------------------------------------------------------- */
+
+  --tracking-logo:    -1.2px;    /* "Au fil de Nath" */
+  --tracking-tagline: 0.64px;    /* "Créatrice • Couturière" */
+  --tracking-h1:      -0.52px;   /* Titres de page */
+  --tracking-h2:      -0.16px;   /* Titres de section */
+  --tracking-caption:  0.028px;  /* Texte caption */
+
+
+  /* ----------------------------------------------------------
+     ESPACEMENTS
+  ---------------------------------------------------------- */
+
+  /* Logo / header */
+  --logo-padding:     40px;   /* Padding interne du bloc logo */
+  --logo-gap:         24px;   /* Gap entre l'icône bobine et le texte */
+
+  /* Layout page */
+  --page-padding-x:   80px;   /* Marge gauche/droite sur 1440px → contenu 1280px */
+  --content-width:    1280px; /* Largeur max du contenu */
+  --page-max-width:   1440px; /* Largeur max du canvas */
+
+  /* Sections */
+  --section-gap:      64px;   /* Espacement entre sections */
+  --block-gap:        40px;   /* Espacement entre blocs internes */
+
+
+  /* ----------------------------------------------------------
+     BORDURES & RAYONS
+  ---------------------------------------------------------- */
+
+  --radius-btn:       100px;  /* Boutons pill — outline arrondi */
+  --radius-card:      16px;   /* Cartes produit */
+  --radius-tag:       100px;  /* Tags / filtres catégorie */
+
+  --border-btn:       1.5px;  /* Épaisseur bordure boutons outline standard */
+  --border-btn-fine:  0.5px;  /* Épaisseur bordure boutons gradient (menu) */
+
+
+  /* ----------------------------------------------------------
+     ÉLÉMENTS DÉCORATIFS
+  ---------------------------------------------------------- */
+
+  --chainette-width:  45px;   /* Largeur du motif chaînette losanges (bords latéraux) */
+
+
+  /* ----------------------------------------------------------
+     TRANSITIONS
+  ---------------------------------------------------------- */
+
+  --transition-base:  0.2s ease;
+  --transition-slow:  0.35s ease;
+
+}
+
+
+/* ----------------------------------------------------------
+   SCROLLBAR LATÉRALE — marine sur fond écru
+---------------------------------------------------------- */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-marine) var(--color-ecru);
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--color-ecru);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--color-marine);
+  border-radius: 4px;
+  border: 2px solid var(--color-ecru);
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — Tablette (≤ 1024px)
+---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  :root {
+    --page-padding-x:   40px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE — Mobile (≤ 768px)
+---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  :root {
+    --text-logo:        36px;
+    --text-h1:          32px;
+    --text-h2:          22px;
+    --text-body-lg:     15px;
+
+    --page-padding-x:   20px;
+    --logo-padding:     24px;
+    --section-gap:      40px;
+  }
+}
