@@ -4,25 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parlons de votre création — Au fil de Nath</title>
-  <!-- Open Graph / partage réseaux sociaux -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Au fil de Nath" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Parlons de votre création — Au fil de Nath" />
-  <meta property="og:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
-  <meta property="og:url" content="https://aufildenath.fr/formulaire-produit.html" />
-  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Parlons de votre création — Au fil de Nath" />
-  <meta name="twitter:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
-  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -262,6 +243,7 @@
       <div class="page__inner">
         <h1 class="page__title">Parlons de votre création</h1>
         <div id="form-root"></div>
+        <iframe name="brevo_hidden_iframe" id="brevo_hidden_iframe" style="display:none" aria-hidden="true" title="Envoi du formulaire"></iframe>
       </div>
     </section>
   </main>
@@ -969,13 +951,16 @@ function getProductThumb(product) {
 
       root.innerHTML = `
         <form class="form" id="product-form"
-              action="https://api.web3forms.com/submit"
-              method="POST">
-          <!-- Web3Forms — config -->
-          <input type="hidden" name="access_key" value="e36e63dd-40b0-411a-9d7c-08d9ce3f7f79" />
-          <input type="hidden" name="subject" value="Nouvelle demande — ${p ? p.name : 'Création personnalisée'}" />
-          <input type="hidden" name="from_name" value="Au fil de Nath" />
-          <input type="hidden" name="produit" value="${p ? p.name + ' (' + p.slug + ')' : ''}" />
+              action="https://73329034.sibforms.com/serve/MUIFAEKcGnDv1U7r-ZIIq00_R2v5gT1OEhAa7dQbeUz9oIKtZdmwnlrdGOUzpbQoLoL0mx3aOtHVuTS_mOMhMW5SzDy6TAv92dpVos_tXWrZEEdRAd7BTNHN1fOPboc8e9bv7vfmFecfL-AZ0ssiT8DQO_Q_hwujoCbNrWyEEbSVKepLmwZE-Kqdu11LtyXfyg7hoOvbXO36XpYm9g=="
+              method="POST"
+              target="brevo_hidden_iframe">
+          <!-- Brevo — champs requis -->
+          <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="locale" value="fr" />
+          <input type="hidden" name="html_type" value="simple" />
+          <!-- Contact Brevo fixe = Nath, pour que la notification lui soit adressée à elle -->
+          <input type="hidden" name="EMAIL" value="aufildenath72@gmail.com" />
+          <input type="hidden" name="PRODUIT" value="${p ? p.name + ' (' + p.slug + ')' : ''}" />
 
           <!-- Aperçu produit -->
           <div class="form__product-preview">
@@ -992,7 +977,7 @@ function getProductThumb(product) {
           <!-- Prénom -->
           <div class="form__group">
             <label class="form__label" for="prenom">Votre prénom</label>
-            <input type="text" id="prenom" name="prenom" class="form__input"
+            <input type="text" id="prenom" name="PRENOM" class="form__input"
               placeholder="Comment puis-je vous appeler ?" />
             <p class="form__error" id="error-prenom">J'ai juste besoin de votre prénom pour savoir comment vous appeler</p>
           </div>
@@ -1000,7 +985,7 @@ function getProductThumb(product) {
           <!-- Email -->
           <div class="form__group">
             <label class="form__label" for="email">Votre email</label>
-            <input type="email" id="email" name="email" class="form__input"
+            <input type="email" id="email" name="CLIENT_EMAIL" class="form__input"
               placeholder="Votre email pour que je puisse vous répondre" />
             <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
           </div>
@@ -1010,7 +995,7 @@ function getProductThumb(product) {
           <!-- Description libre -->
           <div class="form__group">
             <label class="form__label" for="description">Votre idée en quelques mots</label>
-            <textarea id="description" name="description" class="form__textarea"
+            <textarea id="description" name="DESCRIPTION" class="form__textarea"
               placeholder="Décrivez votre idée (prénom, couleurs, occasion, délai…)" rows="5"></textarea>
             <p class="form__example">
               <strong>Exemples :</strong>
@@ -1046,7 +1031,7 @@ function getProductThumb(product) {
                 <li class="custom-select__option" data-value="prenom-motif" role="option">Prénom + motif</li>
                 <li class="custom-select__option" data-value="aucune"       role="option">Pas de broderie</li>
               </ul>
-              <input type="hidden" name="broderie" id="broderie" value="">
+              <input type="hidden" name="BRODERIE" id="broderie" value="">
             </div>
             <p class="form__hint">Vous pouvez préciser les détails après sélection.</p>
           </div>
@@ -1054,7 +1039,7 @@ function getProductThumb(product) {
           <!-- Texte à broder -->
           <div class="form__group" id="texte-group">
             <label class="form__label" for="texte-broder">Texte à broder</label>
-            <input type="text" id="texte-broder" name="texte-broder" class="form__input"
+            <input type="text" id="texte-broder" name="TEXTE_BRODER" class="form__input"
               placeholder="Prénom à broder" />
             <p class="form__error" id="error-texte-broder">Le prénom à broder est nécessaire pour personnaliser votre création</p>
             <p class="form__hint">À remplir uniquement si une broderie est sélectionnée.</p>
@@ -1144,8 +1129,7 @@ function getProductThumb(product) {
 
       const formEl = document.getElementById('product-form');
       if (formEl) {
-        formEl.addEventListener('submit', async function (e) {
-          e.preventDefault();
+        formEl.addEventListener('submit', function (e) {
           const prenom = (document.getElementById('prenom') || {}).value || '';
           const email  = (document.getElementById('email')  || {}).value || '';
           const broderie = (document.getElementById('broderie') || {}).value || '';
@@ -1157,18 +1141,18 @@ function getProductThumb(product) {
           setError('texte-broder', 'error-texte-broder', needsText && !texte.trim());
 
           if (!prenom.trim() || !email.trim() || (needsText && !texte.trim())) {
+            e.preventDefault();
             const first = formEl.querySelector('.is-invalid');
             if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
           }
 
-          try {
-            const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(formEl) });
-            const data = await res.json();
-            window.location.href = data.success ? 'merci.html' : 'echec.html';
-          } catch (err) {
-            window.location.href = 'echec.html';
-          }
+          /* Champs valides : le formulaire s'envoie normalement vers l'iframe
+             caché (Brevo ne renvoie pas de réponse exploitable en cross-origin),
+             puis on redirige vers la page de remerciement après un court délai. */
+          setTimeout(function () {
+            window.location.href = 'merci.html';
+          }, 1000);
         });
       }
     }

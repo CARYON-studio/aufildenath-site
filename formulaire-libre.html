@@ -4,25 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parlez-moi de votre projet — Au fil de Nath</title>
-  <!-- Open Graph / partage réseaux sociaux -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Au fil de Nath" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Parlez-moi de votre projet — Au fil de Nath" />
-  <meta property="og:description" content="Décrivez votre projet sur-mesure : Nathalie vous répond personnellement pour créer une pièce unique, cousue main." />
-  <meta property="og:url" content="https://aufildenath.fr/formulaire-libre.html" />
-  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Parlez-moi de votre projet — Au fil de Nath" />
-  <meta name="twitter:description" content="Décrivez votre projet sur-mesure : Nathalie vous répond personnellement pour créer une pièce unique, cousue main." />
-  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -103,18 +84,21 @@
 
         <!-- Formulaire libre -->
         <form class="form" id="libre-form"
-              action="https://api.web3forms.com/submit"
+              action="https://73329034.sibforms.com/serve/MUIFAEygvIll80GZfgbRw-8cNDdojN8PlLiJUp8YoTNt_JUp1DM92fcjXiUuU5LrNYxfwffpr2ozDlFjo7FJQT2TMgdHVg14a5o5T9M9cJOkVTZraQjcMVM14xwsYEzh8c2OzSIlruYQCvOMMgYA9yvlL5jAvqijMiYkryfVz1CANLZ1DLJrtyvIdUUMMp2uKW-lK7mFWdVZgZ7uMQ=="
               method="POST"
+              target="brevo_hidden_iframe"
               style="margin-top: 40px; clear: both;">
 
-          <!-- Web3Forms — config -->
-          <input type="hidden" name="access_key" value="e36e63dd-40b0-411a-9d7c-08d9ce3f7f79" />
-          <input type="hidden" name="subject" value="Nouveau projet sur-mesure — Au fil de Nath" />
-          <input type="hidden" name="from_name" value="Au fil de Nath" />
+          <!-- Brevo — champs requis -->
+          <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="locale" value="fr" />
+          <input type="hidden" name="html_type" value="simple" />
+          <!-- Contact Brevo fixe = Nath, pour que la notification lui soit adressée à elle -->
+          <input type="hidden" name="EMAIL" value="aufildenath72@gmail.com" />
 
           <div class="form__group">
             <label class="form__label" for="idee">Votre idée en quelques mots</label>
-            <textarea id="idee" name="idee" class="form__textarea"
+            <textarea id="idee" name="IDEE_PROJET" class="form__textarea"
                       placeholder="Décrivez votre idée (prénoms, tissus, occasion, délais…)"
                       style="min-height: 120px;"></textarea>
             <p class="form__error" id="error-idee">Quelques mots sur votre projet m'aideraient à mieux vous répondre</p>
@@ -122,28 +106,28 @@
 
           <div class="form__group">
             <label class="form__label" for="usage">À quoi servira cette création&nbsp;?</label>
-            <textarea id="usage" name="usage" class="form__textarea"
+            <textarea id="usage" name="USAGE" class="form__textarea"
                       placeholder="Un fauteuil, un usage quotidien, une occasion spécifique…"
                       style="min-height: 80px;"></textarea>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="contrainte">Y a-t-il une date ou une contrainte importante&nbsp;?</label>
-            <textarea id="contrainte" name="contrainte" class="form__textarea"
+            <textarea id="contrainte" name="CONTRAINTE" class="form__textarea"
                       placeholder="Une date souhaitée, un délai, ou aucune contrainte particulière…"
                       style="min-height: 80px;"></textarea>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="prenom">Votre prénom</label>
-            <input type="text" id="prenom" name="prenom" class="form__input"
+            <input type="text" id="prenom" name="PRENOM" class="form__input"
                    placeholder="Comment puis-je vous appeler ?" />
             <p class="form__error" id="error-prenom">J'ai juste besoin de votre prénom pour savoir comment vous appeler</p>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="email">Votre email</label>
-            <input type="email" id="email" name="email" class="form__input"
+            <input type="email" id="email" name="CLIENT_EMAIL" class="form__input"
                    placeholder="Votre email pour que je puisse vous répondre" />
             <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
           </div>
@@ -157,6 +141,8 @@
           </div>
 
         </form>
+
+        <iframe name="brevo_hidden_iframe" id="brevo_hidden_iframe" style="display:none" aria-hidden="true" title="Envoi du formulaire"></iframe>
 
       </div>
     </section>
@@ -234,8 +220,7 @@
         });
       });
 
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
+      form.addEventListener('submit', function (e) {
         var idee   = document.getElementById('idee').value.trim();
         var prenom = document.getElementById('prenom').value.trim();
         var email  = document.getElementById('email').value.trim();
@@ -245,18 +230,18 @@
         setError('email',  'error-email',  !email);
 
         if (!idee || !prenom || !email) {
+          e.preventDefault();
           var first = form.querySelector('.is-invalid');
           if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
 
-        try {
-          const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
-          const data = await res.json();
-          window.location.href = data.success ? 'merci.html' : 'echec.html';
-        } catch (err) {
-          window.location.href = 'echec.html';
-        }
+        /* Champs valides : le formulaire s'envoie normalement vers l'iframe
+           caché (Brevo ne renvoie pas de réponse exploitable en cross-origin),
+           puis on redirige vers la page de remerciement après un court délai. */
+        setTimeout(function () {
+          window.location.href = 'merci.html';
+        }, 1000);
       });
     })();
   </script>
