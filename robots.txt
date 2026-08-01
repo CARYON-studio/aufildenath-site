@@ -1,0 +1,11 @@
+# robots.txt — aufildenath.fr
+# Au fil de Nath — créatrice couturière à Parcé-sur-Sarthe (72)
+
+User-agent: *
+Allow: /
+
+# Pages de confirmation de formulaire : sans intérêt pour la recherche
+Disallow: /merci.html
+Disallow: /echec.html
+
+Sitemap: https://aufildenath.fr/sitemap.xml

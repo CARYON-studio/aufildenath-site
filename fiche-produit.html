@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fiche produit — Au fil de Nath</title>
-  <!-- Open Graph / partage réseaux sociaux -->
-  <meta property="og:type" content="website" />
+
+  <!-- ── SEO ────────────────────────────────────────────── -->
+  <title>Créations cousues main — Au fil de Nath</title>
+  <meta name="description" content="Création artisanale cousue main à Parcé-sur-Sarthe (72), personnalisable sur demande : tissus, broderie prénom et finitions au choix." />
+  <link rel="canonical" href="https://aufildenath.fr/fiche-produit.html" />
+
+  <!-- ── Favicon ────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#FAF8F4" />
+
+  <!-- ── Partage social (Open Graph / Twitter) ───────────── -->
+  <meta property="og:type" content="product" />
   <meta property="og:site_name" content="Au fil de Nath" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Fiche produit — Au fil de Nath" />
-  <meta property="og:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta property="og:title" content="Créations cousues main — Au fil de Nath" />
+  <meta property="og:description" content="Création artisanale cousue main à Parcé-sur-Sarthe (72), personnalisable sur demande : tissus, broderie prénom et finitions au choix." />
   <meta property="og:url" content="https://aufildenath.fr/fiche-produit.html" />
   <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:secure_url" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Au fil de Nath — Créatrice Couturière" />
+  <meta property="og:image:alt" content="Au fil de Nath — créatrice couturière à Parcé-sur-Sarthe" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fiche produit — Au fil de Nath" />
-  <meta name="twitter:description" content="Nathalie, couturière artisanale. Créations cousues main, pièces uniques et personnalisables : univers bébé, accessoires, sacs et maroquinerie." />
+  <meta name="twitter:title" content="Créations cousues main — Au fil de Nath" />
+  <meta name="twitter:description" content="Création artisanale cousue main à Parcé-sur-Sarthe (72), personnalisable sur demande : tissus, broderie prénom et finitions au choix." />
   <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-
-  <meta name="description" content="Création artisanale cousue main, personnalisable sur demande." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -1174,6 +1178,93 @@ function getProductThumb(product) {
       });
     }
 
+    /* ── SEO dynamique : title, description, canonical, Open Graph, JSON-LD ──
+       Chaque fiche produit doit être une page distincte aux yeux de Google.
+       Sans ceci, les 20 fiches partagent le même <head> et ne sont pas indexées
+       individuellement. */
+    const CAT_LABEL = {
+      bebe:        'univers bébé',
+      accessoires: 'accessoires',
+      sacs:        'sacs & maroquinerie',
+    };
+
+    function setMeta(selector, attr, value) {
+      const el = document.head.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    }
+
+    function updateSeo(p) {
+      const BASE = 'https://aufildenath.fr/';
+
+      /* Produit introuvable : on évite d'indexer une page vide */
+      if (!p) {
+        const robots = document.createElement('meta');
+        robots.name = 'robots';
+        robots.content = 'noindex, follow';
+        document.head.appendChild(robots);
+        return;
+      }
+
+      /* Titre : version longue si elle tient dans les ~65 caractères
+         affichés par Google, version courte sinon. */
+      let title = `${p.name} — création cousue main | Au fil de Nath`;
+      if (title.length > 65) title = `${p.name} | Au fil de Nath`;
+
+      const cat   = CAT_LABEL[p.category] || 'création artisanale';
+      const intro = (p.description && p.description[0] ? p.description[0] : '')
+                      .replace(/\s+/g, ' ').trim();
+      let desc = `${p.name} — ${cat} cousu main à Parcé-sur-Sarthe (72). ${intro}`;
+      if (desc.length > 158) desc = desc.slice(0, 155).trim() + '…';
+
+      const url = `${BASE}fiche-produit.html?p=${encodeURIComponent(p.slug)}`;
+
+      /* photos[] contient soit une chaîne, soit {src, pos} : on normalise. */
+      const photoUrls = (p.photos || [])
+        .map(ph => (typeof ph === 'string' ? ph : ph && ph.src))
+        .filter(Boolean)
+        .map(ph => BASE + ph);
+      const img = photoUrls[0] || BASE + 'assets/og-image.jpg';
+
+      document.title = title;
+      setMeta('meta[name="description"]', 'content', desc);
+      setMeta('link[rel="canonical"]',    'href',    url);
+      setMeta('meta[property="og:title"]',       'content', title);
+      setMeta('meta[property="og:description"]', 'content', desc);
+      setMeta('meta[property="og:url"]',         'content', url);
+      setMeta('meta[property="og:image"]',       'content', img);
+      setMeta('meta[property="og:image:alt"]',   'content', p.name);
+      setMeta('meta[name="twitter:title"]',       'content', title);
+      setMeta('meta[name="twitter:description"]', 'content', desc);
+      setMeta('meta[name="twitter:image"]',       'content', img);
+
+      /* Données structurées Product */
+      const ld = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: p.name,
+        description: (p.description || []).join(' ').replace(/\s+/g, ' ').trim(),
+        image: photoUrls.length ? photoUrls : [BASE + 'assets/og-image.jpg'],
+        url: url,
+        category: cat,
+        brand: { '@type': 'Brand', name: 'Au fil de Nath' },
+        itemCondition: 'https://schema.org/NewCondition',
+        offers: {
+          '@type': 'Offer',
+          url: url,
+          priceCurrency: 'EUR',
+          price: String(p.price || '').replace(',', '.'),
+          availability: 'https://schema.org/InStock',
+          seller: { '@type': 'Organization', name: 'Au fil de Nath' }
+        }
+      };
+      if (p.sizes) ld.size = p.sizes;
+
+      const tag = document.createElement('script');
+      tag.type = 'application/ld+json';
+      tag.textContent = JSON.stringify(ld);
+      document.head.appendChild(tag);
+    }
+
     /* ── Init ── */
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -1192,8 +1283,8 @@ function getProductThumb(product) {
       const product = getProductBySlug(slug);
       renderProduct(product);
 
-      /* Titre page */
-      if (product) document.title = `${product.name} — Au fil de Nath`;
+      /* SEO de la page (title, description, canonical, OG, JSON-LD) */
+      updateSeo(product);
     });
 
   </script>
