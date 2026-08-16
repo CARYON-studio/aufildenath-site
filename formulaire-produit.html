@@ -705,7 +705,8 @@ const PRODUCTS = [
     slug: 'sac-weekend',
     name: 'Sac Weekend personnalisable',
     category: 'sacs',
-    price: '35',
+    price: '40',
+    priceNote: 'Petit : 40 € · Grand : 60 €',
     sizes: null,
     photos: [
       P + 'georges%205%201.webp',
@@ -968,6 +969,16 @@ function getProductThumb(product) {
         </div>`;
     }
 
+    function mountCaptcha() {
+      var el = document.getElementById('captcha-widget');
+      if (!el || el.dataset.rendered) return;
+      if (window.turnstile) {
+        el.dataset.rendered = '1';
+        window.turnstile.render(el, { sitekey: '0x4AAAAAAEQyOtx57CRGu4O3', language: 'fr' });
+      }
+    }
+    window.onTurnstileLoad = mountCaptcha;
+
     function renderForm(p) {
       const root = document.getElementById('form-root');
       const hasPhoto = p && p.photos && p.photos.length > 0;
@@ -981,9 +992,6 @@ function getProductThumb(product) {
           <!-- Brevo — champs requis -->
           <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="locale" value="fr" />
-          <input type="hidden" name="html_type" value="simple" />
-          <!-- Contact Brevo fixe = Nath, pour que la notification lui soit adressée à elle -->
-          <input type="hidden" name="EMAIL" value="aufildenath72@gmail.com" />
           <input type="hidden" name="PRODUIT" value="${p ? p.name + ' (' + p.slug + ')' : ''}" />
 
           <!-- Aperçu produit -->
@@ -1009,7 +1017,7 @@ function getProductThumb(product) {
           <!-- Email -->
           <div class="form__group">
             <label class="form__label" for="email">Votre email</label>
-            <input type="email" id="email" name="CLIENT_EMAIL" class="form__input"
+            <input type="email" id="email" name="EMAIL" class="form__input" required
               placeholder="Votre email pour que je puisse vous répondre" />
             <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
           </div>
@@ -1071,6 +1079,11 @@ function getProductThumb(product) {
 
           <!-- Tarifs indicatifs -->
           ${p ? renderTarifsGrid(p.options) : ''}
+
+          <!-- Vérification anti-robot -->
+          <div class="form__group">
+            <div class="cf-turnstile" id="captcha-widget" data-sitekey="0x4AAAAAAEQyOtx57CRGu4O3" data-language="fr"></div>
+          </div>
 
           <!-- Submit -->
           <div class="form__submit-wrap">
@@ -1179,6 +1192,8 @@ function getProductThumb(product) {
           }, 1000);
         });
       }
+
+      mountCaptcha();
     }
 
     /* ── Init ── */
@@ -1215,6 +1230,8 @@ function getProductThumb(product) {
       if (product) document.title = 'Demande — ' + product.name + ' — Au fil de Nath';
     });
   </script>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
 
 </body>
 </html>

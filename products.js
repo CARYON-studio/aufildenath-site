@@ -383,7 +383,8 @@ const PRODUCTS = [
     slug: 'sac-weekend',
     name: 'Sac Weekend personnalisable',
     category: 'sacs',
-    price: '35',
+    price: '40',
+    priceNote: 'Petit : 40 € · Grand : 60 €',
     sizes: null,
     photos: [
       P + 'georges%202%201.webp',

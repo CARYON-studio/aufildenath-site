@@ -116,9 +116,6 @@
           <!-- Brevo — champs requis -->
           <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="locale" value="fr" />
-          <input type="hidden" name="html_type" value="simple" />
-          <!-- Contact Brevo fixe = Nath, pour que la notification lui soit adressée à elle -->
-          <input type="hidden" name="EMAIL" value="aufildenath72@gmail.com" />
 
           <div class="form__group">
             <label class="form__label" for="idee">Votre idée en quelques mots</label>
@@ -151,9 +148,13 @@
 
           <div class="form__group">
             <label class="form__label" for="email">Votre email</label>
-            <input type="email" id="email" name="CLIENT_EMAIL" class="form__input"
+            <input type="email" id="email" name="EMAIL" class="form__input" required
                    placeholder="Votre email pour que je puisse vous répondre" />
             <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
+          </div>
+
+          <div class="form__group">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAEQyOtx57CRGu4O3" data-language="fr"></div>
           </div>
 
           <div class="form__submit-wrap">
@@ -269,5 +270,7 @@
       });
     })();
   </script>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
