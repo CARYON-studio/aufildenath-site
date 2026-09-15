@@ -3,32 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parlez-moi de votre projet — Au fil de Nath</title>
 
-  <!-- ── SEO ────────────────────────────────────────────── -->
-  <title>Parlez-moi de votre projet sur mesure — Au fil de Nath</title>
-  <meta name="description" content="Décrivez votre projet de couture sur mesure. Nathalie, couturière en Sarthe, vous répond avec un devis personnalisé sous quelques jours." />
-  <link rel="canonical" href="https://aufildenath.fr/formulaire-libre.html" />
-
-  <!-- ── Favicon ────────────────────────────────────────── -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/favicon.svg" />
-  <meta name="theme-color" content="#FAF8F4" />
-
-  <!-- ── Partage social (Open Graph / Twitter) ───────────── -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Au fil de Nath" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Parlez-moi de votre projet sur mesure — Au fil de Nath" />
-  <meta property="og:description" content="Décrivez votre projet de couture sur mesure. Nathalie, couturière en Sarthe, vous répond avec un devis personnalisé sous quelques jours." />
-  <meta property="og:url" content="https://aufildenath.fr/formulaire-libre.html" />
-  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Au fil de Nath — créatrice couturière à Parcé-sur-Sarthe" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Parlez-moi de votre projet sur mesure — Au fil de Nath" />
-  <meta name="twitter:description" content="Décrivez votre projet de couture sur mesure. Nathalie, couturière en Sarthe, vous répond avec un devis personnalisé sous quelques jours." />
-  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -93,10 +69,10 @@
         <!-- En-tête avec photo flottante -->
         <div style="overflow: hidden;">
           <figure style="float: right; margin: 0 0 24px 40px; max-width: 260px;">
-            <img src="assets/formulaire%20sur%20mesure%20photo.webp" width="520" height="520" loading="lazy" decoding="async"
+            <img src="assets/formulaire%20sur%20mesure%20photo.png"
                  alt="Nathalie au travail"
                  class="form__surmesure-photo"
-                 style="width: 100%; height: auto; border-radius: 18px; border: 0.5px solid var(--color-marine); box-shadow: var(--shadow-marine-soft);" />
+                 style="width: 100%; border-radius: 18px; border: 0.5px solid var(--color-marine); box-shadow: var(--shadow-marine-soft);" />
           </figure>
 
           <h1 class="page__title">Parlez-moi de votre projet</h1>
@@ -108,18 +84,18 @@
 
         <!-- Formulaire libre -->
         <form class="form" id="libre-form"
-              action="https://73329034.sibforms.com/serve/MUIFAEygvIll80GZfgbRw-8cNDdojN8PlLiJUp8YoTNt_JUp1DM92fcjXiUuU5LrNYxfwffpr2ozDlFjo7FJQT2TMgdHVg14a5o5T9M9cJOkVTZraQjcMVM14xwsYEzh8c2OzSIlruYQCvOMMgYA9yvlL5jAvqijMiYkryfVz1CANLZ1DLJrtyvIdUUMMp2uKW-lK7mFWdVZgZ7uMQ=="
+              action="https://api.web3forms.com/submit"
               method="POST"
-              target="brevo_hidden_iframe"
               style="margin-top: 40px; clear: both;">
 
-          <!-- Brevo — champs requis -->
-          <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="locale" value="fr" />
+          <!-- Web3Forms — config -->
+          <input type="hidden" name="access_key" value="e36e63dd-40b0-411a-9d7c-08d9ce3f7f79" />
+          <input type="hidden" name="subject" value="Nouveau projet sur-mesure — Au fil de Nath" />
+          <input type="hidden" name="from_name" value="Au fil de Nath" />
 
           <div class="form__group">
             <label class="form__label" for="idee">Votre idée en quelques mots</label>
-            <textarea id="idee" name="IDEE_PROJET" class="form__textarea"
+            <textarea id="idee" name="idee" class="form__textarea"
                       placeholder="Décrivez votre idée (prénoms, tissus, occasion, délais…)"
                       style="min-height: 120px;"></textarea>
             <p class="form__error" id="error-idee">Quelques mots sur votre projet m'aideraient à mieux vous répondre</p>
@@ -127,34 +103,30 @@
 
           <div class="form__group">
             <label class="form__label" for="usage">À quoi servira cette création&nbsp;?</label>
-            <textarea id="usage" name="USAGE" class="form__textarea"
+            <textarea id="usage" name="usage" class="form__textarea"
                       placeholder="Un fauteuil, un usage quotidien, une occasion spécifique…"
                       style="min-height: 80px;"></textarea>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="contrainte">Y a-t-il une date ou une contrainte importante&nbsp;?</label>
-            <textarea id="contrainte" name="CONTRAINTE" class="form__textarea"
+            <textarea id="contrainte" name="contrainte" class="form__textarea"
                       placeholder="Une date souhaitée, un délai, ou aucune contrainte particulière…"
                       style="min-height: 80px;"></textarea>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="prenom">Votre prénom</label>
-            <input type="text" id="prenom" name="PRENOM" class="form__input"
+            <input type="text" id="prenom" name="prenom" class="form__input"
                    placeholder="Comment puis-je vous appeler ?" />
             <p class="form__error" id="error-prenom">J'ai juste besoin de votre prénom pour savoir comment vous appeler</p>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="email">Votre email</label>
-            <input type="email" id="email" name="EMAIL" class="form__input" required
+            <input type="email" id="email" name="email" class="form__input"
                    placeholder="Votre email pour que je puisse vous répondre" />
             <p class="form__error" id="error-email">Il me manque juste votre email pour pouvoir vous répondre</p>
-          </div>
-
-          <div class="form__group">
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAEQyOtx57CRGu4O3" data-language="fr"></div>
           </div>
 
           <div class="form__submit-wrap">
@@ -166,8 +138,6 @@
           </div>
 
         </form>
-
-        <iframe name="brevo_hidden_iframe" id="brevo_hidden_iframe" style="display:none" aria-hidden="true" title="Envoi du formulaire"></iframe>
 
       </div>
     </section>
@@ -245,7 +215,8 @@
         });
       });
 
-      form.addEventListener('submit', function (e) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
         var idee   = document.getElementById('idee').value.trim();
         var prenom = document.getElementById('prenom').value.trim();
         var email  = document.getElementById('email').value.trim();
@@ -255,22 +226,20 @@
         setError('email',  'error-email',  !email);
 
         if (!idee || !prenom || !email) {
-          e.preventDefault();
           var first = form.querySelector('.is-invalid');
           if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
 
-        /* Champs valides : le formulaire s'envoie normalement vers l'iframe
-           caché (Brevo ne renvoie pas de réponse exploitable en cross-origin),
-           puis on redirige vers la page de remerciement après un court délai. */
-        setTimeout(function () {
-          window.location.href = 'merci.html';
-        }, 1000);
+        try {
+          const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+          const data = await res.json();
+          window.location.href = data.success ? 'merci.html' : 'echec.html';
+        } catch (err) {
+          window.location.href = 'echec.html';
+        }
       });
     })();
   </script>
-
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>

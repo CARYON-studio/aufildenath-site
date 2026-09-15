@@ -400,7 +400,7 @@
   border: none;
   margin: 0 auto 32px;
   flex-shrink: 0;
-  background: url("assets/S%C3%A9parateur%20menu.webp") center/100% 100% no-repeat;
+  background: url("assets/S%C3%A9parateur%20menu.png") center/100% 100% no-repeat;
   opacity: 0.95;
   display: block;
 }

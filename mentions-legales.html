@@ -3,33 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ── SEO ────────────────────────────────────────────── -->
   <title>Mentions légales — Au fil de Nath</title>
-  <meta name="description" content="Mentions légales et politique de confidentialité du site aufildenath.fr." />
-  <link rel="canonical" href="https://aufildenath.fr/mentions-legales.html" />
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="noindex" />
 
-  <!-- ── Favicon ────────────────────────────────────────── -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/favicon.svg" />
-  <meta name="theme-color" content="#FAF8F4" />
-
-  <!-- ── Partage social (Open Graph / Twitter) ───────────── -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Au fil de Nath" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Mentions légales — Au fil de Nath" />
-  <meta property="og:description" content="Mentions légales et politique de confidentialité du site aufildenath.fr." />
-  <meta property="og:url" content="https://aufildenath.fr/mentions-legales.html" />
-  <meta property="og:image" content="https://aufildenath.fr/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Au fil de Nath — créatrice couturière à Parcé-sur-Sarthe" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mentions légales — Au fil de Nath" />
-  <meta name="twitter:description" content="Mentions légales et politique de confidentialité du site aufildenath.fr." />
-  <meta name="twitter:image" content="https://aufildenath.fr/assets/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -122,6 +98,26 @@
 
     .legal__highlight .legal__text {
       font-size: 14px;
+    }
+
+    /* ⚠ À compléter avant mise en ligne */
+    .legal__todo {
+      background: rgba(242, 214, 220, 0.25);
+      border: 1px dashed rgba(242, 214, 220, 0.8);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-marine);
+      opacity: 0.8;
+    }
+
+    .legal__todo::before {
+      content: "⚠ À vérifier avant mise en ligne : ";
+      font-weight: 400;
+      letter-spacing: 0.02em;
     }
 
     .legal__link {
@@ -357,9 +353,9 @@
             <p class="legal__block-title">Destinataires des données</p>
             <p class="legal__text">
               Les données sont reçues et traitées exclusivement par Nathalie Pancher.
-              Les formulaires utilisent le service <strong>Brevo</strong> (Sendinblue SAS),
-              société française dont les serveurs de traitement sont hébergés en France.
-              Vos données peuvent être supprimées à tout moment, sur simple demande.
+              Les formulaires utilisent le service <strong>Web3Forms</strong>, qui transmet
+              les messages par email vers une adresse Gmail. Ce service ne stocke pas vos données
+              à long terme.
             </p>
           </div>
         </div>
@@ -460,6 +456,11 @@
           </ul>
         </div>
 
+        <!-- ── NOTE MISE EN LIGNE ─────────────────────── -->
+        <div class="legal__todo">
+          Vérifier que le nom de domaine aufildenath.fr est bien actif et que l'hébergeur Cloudflare Pages est confirmé avant mise en ligne.
+        </div>
+
         <p class="legal__text" style="margin-top: 40px; opacity: 0.5; font-size: 13px; text-align: center;">
           Dernière mise à jour : juin 2026
         </p>
@@ -537,4 +538,3 @@
 
 </body>
 </html>
- 
