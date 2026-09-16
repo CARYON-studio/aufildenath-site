@@ -760,12 +760,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 62%;   /* recadrage vers le bas : privilégie la jupe plutôt que le fond/les cheveux */
+  object-position: center;   /* photo hero pré-recadrée au ratio du conteneur (3:5) — pas de décalage nécessaire */
 }
 
 /* Miniatures — mêmes proportions que .product__thumb, échange au clic */
 .savoir-faire__thumbs {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
